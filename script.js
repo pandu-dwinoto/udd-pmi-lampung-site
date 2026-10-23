@@ -96,7 +96,126 @@ function renderProfile(content) {
       <div class="profile-text"><span class="tag">${escapeHTML(profile.tag)}</span><h3>${escapeHTML(profile.name)}<br>${escapeHTML(profile.location)}</h3><p>${escapeHTML(profile.description)}</p><span class="pending-inline"><span></span> ${escapeHTML(profile.confirmation)}</span></div>
       <div class="profile-side"><span class="side-number">${escapeHTML(profile.sideNumber)}</span><span class="side-rule"></span><span class="side-label">${escapeHTML(profile.sideLabel).replace(/\n/g, "<br>")}</span></div>
     </div>
+    ${profileDetails(profile)}
   `);
+}
+
+function profileDetails(profile) {
+  const functions = listOf(profile.functions);
+  const leadership = listOf(profile.leadership);
+  const legalBasis = listOf(profile.legalBasis);
+  const cards = [];
+  if (functions.length) {
+    cards.push(`<section class="info-card profile-detail-card--wide"><h3>${escapeHTML(profile.functionsTitle)}</h3><ul class="check-list">${functions.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul></section>`);
+  }
+  if (leadership.length) {
+    cards.push(`<section class="info-card"><h3>${escapeHTML(profile.leadershipTitle)}</h3><dl class="requirement-list requirement-list--stacked">${leadership.map((item) => `<div><dt>${escapeHTML(item.role)}</dt><dd>${escapeHTML(item.name)}</dd></div>`).join("")}</dl></section>`);
+  }
+  if (legalBasis.length) {
+    cards.push(`<section class="info-card info-card--soft"><h3>${escapeHTML(profile.legalTitle)}</h3><ul class="dot-list">${legalBasis.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul></section>`);
+  }
+  return cards.length ? `<div class="info-grid info-grid--three profile-detail-grid">${cards.join("")}</div>` : "";
+}
+
+function listOf(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+const stepList = (steps) => `<ol class="step-list">${listOf(steps).map((step, index) => `
+  <li><span class="step-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span><div><h4>${escapeHTML(step.title)}</h4><p>${escapeHTML(step.description)}</p></div></li>`).join("")}</ol>`;
+
+function renderDonor(content) {
+  const donor = content.donor;
+  const section = document.querySelector('[data-render="donor"]');
+  if (!section) return;
+  section.hidden = !donor;
+  if (!donor) return;
+  if (donor.confirmationNote) {
+    const actions = listOf(donor.actions);
+    section.innerHTML = `
+      <div class="section-heading"><div><p class="eyebrow">${escapeHTML(donor.eyebrow)}</p><h2 id="donor-title">${escapeHTML(donor.titleFirst)}<br><span>${escapeHTML(donor.titleSecond)}</span></h2></div><p class="section-intro">${escapeHTML(donor.introduction)}</p></div>
+      <section class="info-card info-card--soft info-confirmation">
+        <h3>${escapeHTML(donor.confirmationTitle)}</h3>
+        <p>${escapeHTML(donor.confirmationNote)}</p>
+        ${actions.length ? `<div class="section-actions">${actions.map((item, index) => linkMarkup(item, index === 0 ? "button button-primary" : "text-link")).join("")}</div>` : ""}
+      </section>
+    `;
+    return;
+  }
+  const requirements = listOf(donor.requirements);
+  const deferrals = listOf(donor.deferrals);
+  const tips = listOf(donor.tips);
+  const schedule = listOf(donor.schedule);
+  const actions = listOf(donor.actions);
+  section.innerHTML = `
+    <div class="section-heading"><div><p class="eyebrow">${escapeHTML(donor.eyebrow)}</p><h2 id="donor-title">${escapeHTML(donor.titleFirst)}<br><span>${escapeHTML(donor.titleSecond)}</span></h2></div><p class="section-intro">${escapeHTML(donor.introduction)}</p></div>
+    <div class="info-grid">
+      <section class="info-card" aria-labelledby="donor-requirements-title">
+        <h3 id="donor-requirements-title">${escapeHTML(donor.requirementsTitle)}</h3>
+        <dl class="requirement-list">${requirements.map((item) => `<div><dt>${escapeHTML(item.label)}</dt><dd>${escapeHTML(item.value)}</dd></div>`).join("")}</dl>
+      </section>
+      <section class="info-card info-card--soft" aria-labelledby="donor-deferral-title">
+        <h3 id="donor-deferral-title">${escapeHTML(donor.deferralsTitle)}</h3>
+        <ul class="dot-list">${deferrals.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>
+        ${donor.deferralsNote ? `<p class="info-note">${escapeHTML(donor.deferralsNote)}</p>` : ""}
+      </section>
+    </div>
+    <section class="steps-block" aria-labelledby="donor-steps-title">
+      <h3 id="donor-steps-title">${escapeHTML(donor.stepsTitle)}</h3>
+      ${stepList(donor.steps)}
+    </section>
+    <div class="info-grid info-grid--three">
+      ${tips.map((tip) => `<section class="info-card"><h3>${escapeHTML(tip.title)}</h3><ul class="check-list">${listOf(tip.items).map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul></section>`).join("")}
+      ${schedule.length ? `<section class="info-card info-card--soft"><h3>${escapeHTML(donor.scheduleTitle)}</h3><dl class="requirement-list requirement-list--stacked">${schedule.map((item) => `<div><dt>${escapeHTML(item.place)}</dt><dd>${escapeHTML(item.detail)}</dd></div>`).join("")}</dl></section>` : ""}
+    </div>
+    ${actions.length ? `<div class="section-actions">${actions.map((item, index) => linkMarkup(item, index === 0 ? "button button-primary" : "text-link")).join("")}</div>` : ""}
+  `;
+}
+
+function renderBloodRequest(content) {
+  const request = content.bloodRequest;
+  const section = document.querySelector('[data-render="blood-request"]');
+  if (!section) return;
+  const wrapper = section.closest("section");
+  if (wrapper) wrapper.hidden = !request;
+  if (!request) return;
+  if (request.confirmationNote) {
+    const actions = listOf(request.actions);
+    section.innerHTML = `
+      <div class="section-heading"><div><p class="eyebrow">${escapeHTML(request.eyebrow)}</p><h2 id="permintaan-darah-title">${escapeHTML(request.titleFirst)}<br><span>${escapeHTML(request.titleSecond)}</span></h2></div><p class="section-intro">${escapeHTML(request.introduction)}</p></div>
+      <section class="info-card info-card--soft info-confirmation">
+        <h3>${escapeHTML(request.confirmationTitle)}</h3>
+        <p>${escapeHTML(request.confirmationNote)}</p>
+        ${actions.length ? `<div class="section-actions">${actions.map((item, index) => linkMarkup(item, index === 0 ? "button button-primary" : "text-link")).join("")}</div>` : ""}
+      </section>
+    `;
+    return;
+  }
+  const components = listOf(request.components);
+  const bppdPoints = listOf(request.bppdPoints);
+  const urgentActions = listOf(request.urgentActions);
+  section.innerHTML = `
+    <div class="section-heading"><div><p class="eyebrow">${escapeHTML(request.eyebrow)}</p><h2 id="permintaan-darah-title">${escapeHTML(request.titleFirst)}<br><span>${escapeHTML(request.titleSecond)}</span></h2></div><p class="section-intro">${escapeHTML(request.introduction)}</p></div>
+    <div class="request-layout">
+      <section class="steps-block steps-block--card" aria-labelledby="request-steps-title">
+        <h3 id="request-steps-title">${escapeHTML(request.stepsTitle)}</h3>
+        ${stepList(request.steps)}
+      </section>
+      <div class="request-side">
+        <section class="info-card info-card--urgent" aria-labelledby="request-urgent-title">
+          <h3 id="request-urgent-title">${escapeHTML(request.urgentTitle)}</h3>
+          <p>${escapeHTML(request.urgentDescription)}</p>
+          <div class="urgent-actions">${urgentActions.map((item, index) => linkMarkup(item, index === 0 ? "button button-light" : "urgent-link")).join("")}</div>
+        </section>
+        ${components.length ? `<section class="info-card"><h3>${escapeHTML(request.componentsTitle)}</h3><ul class="dot-list">${components.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>${request.componentsNote ? `<p class="info-note">${escapeHTML(request.componentsNote)}</p>` : ""}</section>` : ""}
+      </div>
+    </div>
+    <section class="info-card info-card--bppd" aria-labelledby="request-bppd-title">
+      <h3 id="request-bppd-title">${escapeHTML(request.bppdTitle)}</h3>
+      <p>${escapeHTML(request.bppdDescription)}</p>
+      ${bppdPoints.length ? `<ul class="check-list">${bppdPoints.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>` : ""}
+    </section>
+  `;
 }
 
 function renderGallery(content) {
@@ -195,16 +314,16 @@ function renderApp(content) {
     <details class="app-privacy">
       <summary><span><span class="eyebrow">${escapeHTML(app.privacyLabel)}</span><strong>${escapeHTML(app.privacyIntro)}</strong></span><span class="faq-plus" aria-hidden="true"></span></summary>
       <div class="app-privacy-content">
-        <h3>Pengungkapan Keamanan Data di Google Play</h3>${simpleList(dataSafetyClaims)}
-        <h3>Data yang dicantumkan</h3><div class="app-data-grid">${dataCollected.map((item) => `<article><h4>${escapeHTML(item.category)}</h4><p>${escapeHTML(item.details)}</p></article>`).join("")}</div>
-        <h3>Tujuan penggunaan menurut kebijakan privasi</h3>${simpleList(privacyPurposes)}
-        <h3>Pernyataan lain dalam kebijakan privasi</h3>${simpleList(privacyOtherClaims)}
-        <h3>${escapeHTML(app.discrepancyLabel)}</h3><ul class="app-discrepancies">${discrepancies.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>
+        ${dataSafetyClaims.length ? `<h3>Pengungkapan Keamanan Data di Google Play</h3>${simpleList(dataSafetyClaims)}` : ""}
+        ${dataCollected.length ? `<h3>Data yang dicantumkan</h3><div class="app-data-grid">${dataCollected.map((item) => `<article><h4>${escapeHTML(item.category)}</h4><p>${escapeHTML(item.details)}</p></article>`).join("")}</div>` : ""}
+        ${privacyPurposes.length ? `<h3>Tujuan penggunaan data</h3>${simpleList(privacyPurposes)}` : ""}
+        ${privacyOtherClaims.length ? `<h3>Perlindungan data</h3>${simpleList(privacyOtherClaims)}` : ""}
+        ${discrepancies.length ? `<h3>${escapeHTML(app.discrepancyLabel)}</h3><ul class="app-discrepancies">${discrepancies.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>` : ""}
         <div class="app-policy-links">${linkMarkup({ label: app.privacyPolicyLabel, href: app.privacyPolicyUrl, external: true }, "text-link")}${linkMarkup({ label: app.dataSafetyLabel, href: app.dataSafetyUrl, external: true }, "text-link")}</div>
       </div>
     </details>
-    <p class="app-source-note">${escapeHTML(app.sourceNote)}</p>
-    <div class="source-links" aria-label="Referensi SaiDonor"><span>REFERENSI SAIDONOR</span>${references.map((item) => linkMarkup({ ...item, external: true })).join("")}</div>
+    ${app.sourceNote ? `<p class="app-source-note">${escapeHTML(app.sourceNote)}</p>` : ""}
+    ${references.length ? `<div class="source-links" aria-label="Referensi SaiDonor"><span>TAUTAN SAIDONOR</span>${references.map((item) => linkMarkup({ ...item, external: true })).join("")}</div>` : ""}
   `);
 }
 
@@ -336,12 +455,12 @@ function renderContact(content) {
           return `<article class="social-content-card social-content-card--${icon}">
             <div class="social-content-art" aria-hidden="true"><span>${contentGlyphs[icon]}</span><i></i></div>
             <span class="social-content-meta">${escapeHTML(item.platform)} · ${escapeHTML(item.category)}</span>
-            <h5>${escapeHTML(item.title)}</h5><p>${escapeHTML(item.description)}</p>
+            <h4>${escapeHTML(item.title)}</h4><p>${escapeHTML(item.description)}</p>
             <a href="${escapeHTML(safeHref(item.href))}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.linkLabel)} <span aria-hidden="true">↗</span></a>
           </article>`;
         }).join("")}</div>
       </details>
-      <p class="contact-social-note">${escapeHTML(social.profileSummary)} ${escapeHTML(social.checkedAt)}</p>
+      ${social.profileSummary || social.checkedAt ? `<p class="contact-social-note">${escapeHTML(social.profileSummary)} ${escapeHTML(social.checkedAt)}</p>` : ""}
     </section>
   `);
 }
@@ -357,19 +476,22 @@ function renderFooter(content) {
       ${footerDescription ? `<p>${footerDescription}</p>` : ""}
       <nav class="footer-navigation" aria-label="Jelajahi situs">
         <div class="footer-nav-group">
-          <span>Informasi</span>
-          <a href="#layanan">Layanan donor</a>
-          <a href="#informasi">Kabar &amp; kegiatan</a>
-          <a href="#faq">Pertanyaan umum</a>
+          <span>Layanan</span>
+          <a href="#donor">Syarat &amp; alur donor</a>
+          <a href="#permintaan-darah">Permintaan darah</a>
+          <a href="#saidonor">Aplikasi SaiDonor</a>
         </div>
         <div class="footer-nav-group">
-          <span>Kunjungan</span>
+          <span>Informasi</span>
+          <a href="#profil">Profil UDD</a>
+          <a href="#informasi">Kabar &amp; kegiatan</a>
+          <a href="#faq">Pertanyaan umum</a>
           <a href="#kontak">Lokasi &amp; kontak</a>
         </div>
       </nav>
       <a class="back-top" href="#beranda">${escapeHTML(footer.backToTop)} <span aria-hidden="true">↑</span></a>
     </div>
-    <div class="section-wrap footer-bottom"><span>${escapeHTML(footer.copyrightPrefix)}${new Date().getFullYear()}${escapeHTML(footer.copyrightSuffix)}</span>${footer.note ? `<span>${escapeHTML(footer.note)}</span>` : ""}
+    <div class="section-wrap footer-bottom"><span>${escapeHTML(footer.copyrightPrefix)}${new Date().getFullYear()}${escapeHTML(footer.copyrightSuffix)}</span>${footer.note ? `<span>${escapeHTML(footer.note)}</span>` : ""}</div>
   `);
 }
 
@@ -430,7 +552,7 @@ function initializeMotion() {
   if (reduceMotion || !("IntersectionObserver" in window)) return;
 
   const elements = document.querySelectorAll(
-    ".quick-access-card, .profile-panel, .gallery-card, .service-card, .app-lead, .app-feature-card, .app-detail-card, .news-card, .empty-update, .faq-list details, .contact-card, .social-directory"
+    ".quick-access-card, .profile-panel, .gallery-card, .service-card, .info-card, .steps-block, .app-lead, .app-feature-card, .app-detail-card, .news-card, .empty-update, .faq-list details, .contact-card, .social-directory"
   );
   if (!elements.length) return;
 
@@ -491,6 +613,8 @@ function renderSite(content) {
   renderProfile(content);
   renderGallery(content);
   renderServices(content);
+  renderDonor(content);
+  renderBloodRequest(content);
   renderApp(content);
   renderUpdates(content);
   renderFAQ(content);
