@@ -18,7 +18,7 @@ Server hanya bind ke `127.0.0.1`; CMS tidak dapat diakses dari jaringan luar. Se
 
 ## Situs publik
 
-Workflow GitHub Pages menerbitkan versi statis situs setiap ada perubahan ke branch `main`. Hanya `index.html`, `script.js`, `styles.css`, `content.json`, lambang, dan aset di `media/` yang diterbitkan; server dan halaman CMS tidak disertakan. Karena itu, penyuntingan melalui CMS lokal tidak otomatis memperbarui situs publik—perubahan `content.json` harus di-commit dan di-push. Anggap seluruh konten dan gambar yang dipush ke branch `main` sebagai informasi publik. Kredensial admin tetap berada di `private/` dan tidak boleh ditambahkan ke repository.
+Versi publik statis tersedia di <https://pandu-dwinoto.github.io/udd-pmi-lampung-site/>. Source dan CMS tetap berada di repository privat ini; repository publik terpisah hanya berisi halaman, konten, lambang, dan gambar yang memang ditampilkan ke pengunjung. Setelah menyunting CMS lokal, sinkronkan `index.html`, `script.js`, `styles.css`, `content.json`, `assets/pmi-official-favicon.png`, dan aset `media/` yang dipakai ke repository publik lalu push agar situs terbarui. Jangan salin server, halaman CMS, atau folder `private/`. Anggap seluruh konten dan gambar di repository publik sebagai informasi publik.
 
 ## Menyunting dan memublikasikan konten
 
