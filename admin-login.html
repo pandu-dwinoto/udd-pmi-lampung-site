@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Masuk CMS — UDD PMI Lampung</title>
+    <link rel="stylesheet" href="/admin.css">
+    <script src="/admin.js" defer></script>
+  </head>
+  <body class="login-page">
+    <main class="login-card">
+      <a class="login-back" href="/">← Kembali ke situs publik</a>
+      <p class="admin-eyebrow">CMS · UDD PMI PROVINSI LAMPUNG</p>
+      <h1>Masuk editor</h1>
+      <p class="login-intro">Gunakan akun editor yang dibuat pada komputer server ini.</p>
+      <form id="login-form">
+        <label for="username">Nama pengguna</label>
+        <input id="username" name="username" autocomplete="username" required minlength="3">
+        <label for="password">Kata sandi</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button class="admin-primary" type="submit">Masuk ke CMS</button>
+        <p id="login-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+      <p class="security-note">Halaman editor memerlukan autentikasi. Situs ini tidak mengumpulkan data kesehatan atau data pribadi pengunjung.</p>
+    </main>
+  </body>
+</html>

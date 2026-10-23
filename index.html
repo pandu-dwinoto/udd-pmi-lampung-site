@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f5ef">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <link rel="icon" type="image/png" href="/assets/pmi-official-favicon.png">
+    <title>UDD Pembina PMI Provinsi Lampung</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#konten" data-content="ui.skipLink"></a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#beranda" data-content-aria="brand.accessibleName">
+          <span class="brand-mark" id="header-brand-mark" aria-hidden="true"></span>
+          <span class="brand-copy"><strong data-content="brand.shortName"></strong><span data-content="brand.organization"></span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-content-aria="ui.menuOpen">
+          <span class="sr-only" data-content="ui.menuOpen"></span><span class="menu-lines" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="site-nav" data-content-aria="ui.sectionNavigation"></nav>
+      </div>
+    </header>
+
+    <main id="konten">
+      <section class="hero section-wrap" id="beranda" aria-labelledby="hero-title">
+        <div class="hero-copy" data-render="hero-copy"></div>
+        <div class="hero-art" data-render="hero-art"></div>
+        <div class="hero-bottom" data-render="hero-bottom"></div>
+      </section>
+      <section class="quick-access section-wrap" data-render="quick-access" aria-label="Akses cepat"></section>
+      <section class="notice-band" data-render="notice"></section>
+      <section class="content-section section-wrap" id="profil" aria-labelledby="profil-title" data-render="profile"></section>
+      <section class="gallery-section section-wrap" id="dokumentasi" aria-labelledby="dokumentasi-title" data-render="gallery"></section>
+      <section class="services-section" id="layanan" aria-labelledby="layanan-title"><div class="section-wrap" data-render="services"></div></section>
+      <section class="app-section section-wrap" id="saidonor" aria-labelledby="saidonor-title" data-render="app"></section>
+      <section class="updates-section section-wrap" id="informasi" aria-labelledby="informasi-title" data-render="updates"></section>
+      <section class="faq-section" id="faq" aria-labelledby="faq-title"><div class="section-wrap faq-layout" data-render="faq"></div></section>
+      <section class="contact-section section-wrap" id="kontak" aria-labelledby="kontak-title"><div class="contact-card" data-render="contact"></div></section>
+    </main>
+
+    <footer class="site-footer" data-render="footer"></footer>
+  </body>
+</html>

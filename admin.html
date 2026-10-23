@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Editor konten — UDD Pembina PMI Lampung</title>
+    <link rel="stylesheet" href="/admin.css">
+    <script src="/admin.js" defer></script>
+  </head>
+  <body class="cms-page">
+    <header class="cms-header">
+      <a href="/" class="cms-brand"><img class="cms-brand-logo" src="/assets/pmi-official-favicon.png" alt=""><span><strong>UDD Pembina PMI</strong><small>EDITOR KONTEN</small></span></a>
+      <div class="cms-actions">
+        <a class="admin-secondary" href="/" target="_blank" rel="noopener noreferrer">Lihat situs publik ↗</a>
+        <button id="preview-button" class="admin-secondary" type="button">Pratinjau draf</button>
+        <button id="save-button" class="admin-primary" type="button">Simpan &amp; publikasikan</button>
+        <button id="logout-button" class="admin-quiet" type="button">Keluar</button>
+      </div>
+    </header>
+    <div class="cms-shell">
+      <aside class="cms-sidebar">
+        <p class="admin-eyebrow">KONTEN WEBSITE</p>
+        <nav id="section-nav" aria-label="Bagian konten"></nav>
+        <p class="sidebar-hint">Draf pratinjau hanya tersimpan di sesi editor. Klik “Simpan &amp; publikasikan” untuk menyimpannya ke situs.</p>
+      </aside>
+      <main class="cms-main">
+        <div id="status" class="cms-status" role="status" aria-live="polite"></div>
+        <div id="editor"><p class="loading">Memuat konten tersimpan…</p></div>
+        <section id="preview-panel" class="preview-panel" hidden>
+          <div class="preview-heading"><div><p class="admin-eyebrow">PRATINJAU LOKAL</p><h2>Periksa draf sebelum dipublikasikan</h2></div><button id="close-preview" class="admin-secondary" type="button">Tutup pratinjau</button></div>
+          <iframe id="preview-frame" title="Pratinjau draf website"></iframe>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

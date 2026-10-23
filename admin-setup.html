@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Buat akun editor — UDD PMI Lampung</title>
+    <link rel="stylesheet" href="/admin.css">
+    <script src="/admin.js" defer></script>
+  </head>
+  <body class="login-page">
+    <main class="login-card">
+      <a class="login-back" href="/">← Kembali ke situs publik</a>
+      <p class="admin-eyebrow">SETUP LOKAL · UDD PMI PROVINSI LAMPUNG</p>
+      <h1>Buat akun editor</h1>
+      <p class="login-intro">Buat akun pertama untuk melindungi CMS. Setup hanya tersedia di server lokal ini dan akan ditutup sesudah akun tersimpan.</p>
+      <form id="setup-form">
+        <label for="setup-username">Nama pengguna</label>
+        <input id="setup-username" name="username" autocomplete="username" required minlength="3" maxlength="64" pattern="[A-Za-z0-9._-]+">
+        <label for="setup-password">Kata sandi baru</label>
+        <input id="setup-password" name="password" type="password" autocomplete="new-password" required minlength="14">
+        <label for="setup-confirm">Ulangi kata sandi</label>
+        <input id="setup-confirm" name="confirmation" type="password" autocomplete="new-password" required minlength="14">
+        <button class="admin-primary" type="submit">Buat akun &amp; buka CMS</button>
+        <p id="setup-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+      <p class="security-note">Gunakan kata sandi baru yang tidak pernah dikirim lewat chat. Minimum 14 karakter. Kata sandi disimpan sebagai hash; server hanya dapat diakses dari komputer ini.</p>
+    </main>
+  </body>
+</html>

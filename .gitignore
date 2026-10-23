@@ -1,0 +1,4 @@
+node_modules/
+private/
+content.json.bak
+content.json.*.tmp
