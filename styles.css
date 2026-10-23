@@ -1652,6 +1652,15 @@ body { background: var(--paper); color: var(--ink); }
 .app-feature-icon--4 { border-color: #eee1c8; color: #82602b; background: #fbf5e9; }
 .app-feature-icon--6 { border-color: #d8e5d9; color: #3f704e; background: #eef5ee; }
 .app-feature-icon--1 { border-color: #efd4d8; color: var(--red-dark); background: #fff0f2; }
+.quick-access-icon svg, .card-icon svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .app-detail-card dl>div { border-color: #e8dfdc; }
 .app-privacy-content, .social-content-details { border-color: #e8dfdc; }
 .app-privacy>summary .faq-plus, .social-content-details .faq-plus { border-color: #ebd8d9; background: #fff4f3; }

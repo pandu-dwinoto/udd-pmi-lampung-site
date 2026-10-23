@@ -5,6 +5,17 @@ let motionObserver;
 let motionTimeout;
 const SITE_ROOT = new URL("./", window.location.href);
 const OFFICIAL_PMI_LOGO = new URL("assets/pmi-official-favicon.png", SITE_ROOT).pathname;
+const siteGlyphs = {
+  donor: '<svg viewBox="0 0 24 24"><path d="M12 2C9.2 6.1 5.5 10.1 5.5 14a6.5 6.5 0 0 0 13 0C18.5 10.1 14.8 6.1 12 2Z"/><path d="M9 15a3.2 3.2 0 0 0 3 2"/></svg>',
+  request: '<svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5M8.5 10h7m-7 4h7m-7 4h4"/></svg>',
+  location: '<svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  whatsapp: '<svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.7 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.4 2.6 2 4.2 4.6 4.8l1-1.2 2 .9c-.2 1.5-1.2 2.2-2.7 2-3.6-.7-6-3-6.6-6.3-.2-1.4.6-2.3 2-2.5l1 2Z"/></svg>',
+  app: '<svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 5h4m-3 13h2"/></svg>',
+  calendar: '<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M7.5 3v4m9-4v4m-13 3.5h17m-12 4 2 2 4-4"/></svg>'
+};
+const siteIcon = (name) => Object.prototype.hasOwnProperty.call(siteGlyphs, name)
+  ? siteGlyphs[name]
+  : siteGlyphs.donor;
 
 const escapeHTML = (value) => String(value ?? "").replace(/[&<>"']/g, (character) => ({
   "&": "&amp;",
@@ -75,7 +86,7 @@ function renderQuickAccess(content) {
     <div class="quick-access-heading"><div><p class="eyebrow">${escapeHTML(quickAccess.eyebrow)}</p><h2>${escapeHTML(quickAccess.title)}</h2></div><p>${escapeHTML(quickAccess.introduction)}</p></div>
     <div class="quick-access-grid">${items.map((item, index) => `
       <a class="quick-access-card" href="${escapeHTML(safeHref(item.href))}"${item.external ? ' target="_blank" rel="noopener noreferrer"' : ""}>
-        <span class="quick-access-number">0${index + 1}</span><span class="quick-access-icon" aria-hidden="true">${escapeHTML(item.icon)}</span>
+        <span class="quick-access-number">0${index + 1}</span><span class="quick-access-icon" aria-hidden="true">${siteIcon(item.icon)}</span>
         <span class="quick-access-copy"><strong>${escapeHTML(item.title)}</strong><span>${escapeHTML(item.description)}</span></span>
         <span class="quick-access-arrow" aria-hidden="true">↗</span>
       </a>`).join("")}</div>
@@ -252,7 +263,7 @@ function renderServices(content) {
     <div class="section-heading services-heading"><div><p class="eyebrow">${escapeHTML(services.eyebrow)}</p><h2 id="layanan-title">${escapeHTML(services.titleFirst)}<br><span>${escapeHTML(services.titleSecond)}</span></h2></div><p class="section-intro">${escapeHTML(services.introduction)}</p></div>
     <div class="service-grid">${items.map((item) => `
       <article class="service-card${item.accent ? " card-accent" : ""}">
-        <span class="card-number">${escapeHTML(item.number)}</span><span class="card-icon" aria-hidden="true">${escapeHTML(item.icon)}</span>
+        <span class="card-number">${escapeHTML(item.number)}</span><span class="card-icon" aria-hidden="true">${siteIcon(item.icon)}</span>
         <h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.description)}</p>
         ${linkMarkup({ label: item.linkLabel, href: item.href, external: item.external }, "")}
       </article>`).join("")}
@@ -477,7 +488,7 @@ function renderFooter(content) {
       <nav class="footer-navigation" aria-label="Jelajahi situs">
         <div class="footer-nav-group">
           <span>Layanan</span>
-          <a href="#donor">Syarat &amp; alur donor</a>
+          <a href="#donor">Informasi donor</a>
           <a href="#permintaan-darah">Permintaan darah</a>
           <a href="#saidonor">Aplikasi SaiDonor</a>
         </div>

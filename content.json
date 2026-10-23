@@ -65,7 +65,7 @@
       "href": "#permintaan-darah",
       "suffix": "→"
     },
-    "note": "Situs PMI Lampung mencantumkan UDD buka 24 jam dan gerai donor Jumat 10.00?15.00 WIB. Konfirmasikan sebelum berkunjung.",
+    "note": "Situs PMI Lampung mencantumkan UDD buka 24 jam dan gerai donor Jumat pukul 10.00 sampai 15.00 WIB. Konfirmasikan sebelum berkunjung.",
     "artDescription": "Ilustrasi tetes darah dan kepedulian",
     "artLabel": "Donor\ndarah",
     "artCaptionTitle": "dr. Zam Zanariah Ibrahim",
@@ -73,7 +73,7 @@
     "artIndex": "",
     "artLocation": "",
     "footerLabel": "UNIT DONOR DARAH PEMBINA",
-    "footerTopics": "DONOR ? INFORMASI LAYANAN ? KONTAK"
+    "footerTopics": "DONOR | INFORMASI LAYANAN | KONTAK"
   },
   "quickAccess": {
     "eyebrow": "AKSES CEPAT",
@@ -81,28 +81,28 @@
     "introduction": "Pilih informasi lokasi, kontak, dan aplikasi UDD yang Anda perlukan.",
     "items": [
       {
-        "icon": "?",
+        "icon": "donor",
         "title": "Informasi donor darah",
         "description": "Syarat dan panduan donor perlu konfirmasi langsung dari UDD",
         "href": "#donor",
         "external": false
       },
       {
-        "icon": "?",
+        "icon": "request",
         "title": "Informasi permintaan darah",
         "description": "Prosedur layanan perlu dikonfirmasi ke fasilitas kesehatan dan UDD",
         "href": "#permintaan-darah",
         "external": false
       },
       {
-        "icon": "?",
+        "icon": "location",
         "title": "Lokasi UDD",
         "description": "Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung",
         "href": "https://www.google.com/maps/place/?q=place_id:ChIJLcX8tvvaQC4R0qqmUuzVKXw",
         "external": true
       },
       {
-        "icon": "?",
+        "icon": "whatsapp",
         "title": "WhatsApp Humas UDD",
         "description": "Kanal Humas yang tercantum pada profil resmi UDD",
         "href": "https://wa.me/628117903020",
@@ -115,7 +115,7 @@
     "description": "Persyaratan donor serta prosedur dan ketersediaan darah belum dikonfirmasi untuk ditampilkan di situs ini. Mohon tanyakan informasi terkini melalui kanal resmi UDD.",
     "linkLabel": "Lihat informasi kontak",
     "linkHref": "#kontak",
-    "linkSuffix": "?"
+    "linkSuffix": "\u2192"
   },
   "profile": {
     "eyebrow": "01 / MENGENAL UDD",
@@ -126,7 +126,7 @@
     "name": "Unit Donor Darah Pembina PMI",
     "location": "Provinsi Lampung",
     "description": "UDD Pembina PMI Provinsi Lampung merupakan unit donor darah di Provinsi Lampung. Rincian fungsi dan prosedur operasional perlu dikonfirmasi kepada UDD.",
-    "confirmation": "Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung ? jam buka 24 jam menurut situs PMI Lampung",
+    "confirmation": "Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung. Jam buka 24 jam menurut situs PMI Lampung.",
     "sideNumber": "01",
     "sideLabel": "TENTANG\nLEMBAGA",
     "functionsTitle": "Lingkup layanan",
@@ -174,9 +174,9 @@
     "items": [
       {
         "number": "01",
-        "icon": "?",
+        "icon": "donor",
         "title": "Donor darah",
-        "description": "Situs PMI Lampung mencantumkan UDD Pembina buka 24 jam serta gerai donor di Markas PMI setiap Jumat, pukul 10.00?15.00 WIB. Konfirmasikan sebelum datang.",
+        "description": "Situs PMI Lampung mencantumkan UDD Pembina buka 24 jam serta gerai donor di Markas PMI setiap Jumat, pukul 10.00 sampai 15.00 WIB. Konfirmasikan sebelum datang.",
         "linkLabel": "Informasi resmi PMI Lampung",
         "href": "https://www.pmilampung.or.id/donor-darah",
         "external": true,
@@ -184,7 +184,7 @@
       },
       {
         "number": "02",
-        "icon": "?",
+        "icon": "request",
         "title": "Permintaan darah",
         "description": "Prosedur, ketersediaan, dan biaya layanan belum dikonfirmasi UDD; situs ini tidak memuat petunjuk yang belum disahkan.",
         "linkLabel": "Informasi kontak",
@@ -194,7 +194,7 @@
       },
       {
         "number": "03",
-        "icon": "?",
+        "icon": "app",
         "title": "Mobile Unit",
         "description": "Fitur agenda Mobile Unit tercantum pada Google Play SaiDonor. Periksa kanal UDD untuk informasi yang tersedia dan terbaru.",
         "linkLabel": "Lihat aplikasi SaiDonor",
@@ -216,13 +216,13 @@
         "label": "WhatsApp Humas UDD",
         "href": "https://wa.me/628117903020",
         "external": true,
-        "suffix": "?"
+        "suffix": "\u2197"
       },
       {
         "label": "Informasi donor PMI Lampung",
         "href": "https://www.pmilampung.or.id/donor-darah",
         "external": true,
-        "suffix": "?"
+        "suffix": "\u2197"
       }
     ]
   },
@@ -238,7 +238,7 @@
         "label": "WhatsApp Humas UDD",
         "href": "https://wa.me/628117903020",
         "external": true,
-        "suffix": "?"
+        "suffix": "\u2197"
       }
     ]
   },
@@ -287,7 +287,7 @@
         "description": "Contoh tampilan kartu dengan informasi pribadi yang telah ditutup."
       }
     ],
-    "featuresLabel": "FITUR UTAMA",
+    "featuresLabel": "FITUR DI GOOGLE PLAY",
     "features": [
       {
         "title": "Informasi stok darah",
@@ -358,7 +358,7 @@
     "dataSafetyLabel": "Lihat Keamanan Data di Google Play",
     "discrepancyLabel": "",
     "discrepancies": [],
-    "sourceNote": "",
+    "sourceNote": "Fitur SaiDonor dirangkum dari listing Google Play pada 23 Oktober 2026; informasi dapat berubah.",
     "references": [
       {
         "label": "SaiDonor di Google Play",
@@ -447,7 +447,7 @@
       },
       {
         "question": "Kapan waktu donor darah?",
-        "answer": "Situs PMI Lampung mencantumkan gerai donor di Markas PMI setiap Jumat pukul 10.00?15.00 WIB dan UDD Pembina buka 24 jam. Jadwal dapat berubah; konfirmasikan sebelum datang."
+        "answer": "Situs PMI Lampung mencantumkan gerai donor di Markas PMI setiap Jumat pukul 10.00 sampai 15.00 WIB dan UDD Pembina buka 24 jam. Jadwal dapat berubah; konfirmasikan sebelum datang."
       },
       {
         "question": "Apa persyaratan donor darah?",
@@ -496,7 +496,7 @@
       },
       {
         "label": "JAM UDD PEMBINA",
-        "value": "24 jam ? tercantum di situs PMI Lampung"
+        "value": "24 jam (tercantum di situs PMI Lampung)"
       },
       {
         "label": "CALL CENTER PMI PROVINSI LAMPUNG",
@@ -537,7 +537,7 @@
         {
           "label": "WhatsApp Humas UDD",
           "value": "0811 790 3020",
-          "description": "Informasi layanan melalui Humas UDD.",
+          "description": "Nomor Humas tercantum pada profil UDD; peruntukan untuk permintaan darah perlu dikonfirmasi.",
           "href": "https://wa.me/628117903020"
         },
         {
