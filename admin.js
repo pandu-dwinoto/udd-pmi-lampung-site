@@ -19,7 +19,9 @@ const sectionNames = {
   notice: "Pemberitahuan",
   profile: "Profil",
   gallery: "Dokumentasi UDD",
-  services: "Layanan donor",
+  services: "Layanan utama",
+  donor: "Syarat & alur donor",
+  bloodRequest: "Permintaan darah",
   app: "Aplikasi SaiDonor",
   updates: "Berita & referensi",
   faq: "FAQ",
@@ -134,7 +136,8 @@ const fieldNames = {
 
 const longFields = new Set([
   "description", "introduction", "note", "answer", "summary", "footnote",
-  "emptyDescription", "ogDescription", "confirmation"
+  "emptyDescription", "ogDescription", "confirmation", "deferralsNote",
+  "componentsNote", "bppdDescription", "urgentDescription"
 ]);
 
 const templateForArray = (path, current) => {
@@ -144,6 +147,12 @@ const templateForArray = (path, current) => {
     "quickAccess.items": { icon: "", title: "", description: "", href: "#", external: false },
     "gallery.items": { image: "", alt: "", title: "", description: "", date: "", sourceUrl: "", sourceLabel: "Lihat unggahan sumber" },
     "services.items": { number: "", icon: "", title: "", description: "", linkLabel: "", href: "#", external: false, accent: false },
+    "donor.requirements": { label: "", value: "" },
+    "donor.steps": { title: "", description: "" },
+    "donor.schedule": { place: "", detail: "" },
+    "donor.actions": { label: "", href: "#", suffix: "→" },
+    "bloodRequest.steps": { title: "", description: "" },
+    "bloodRequest.urgentActions": { label: "", href: "#" },
     "updates.entries": { date: "", category: "Kegiatan", title: "", summary: "", href: "", linkLabel: "", external: false },
     "updates.references": { label: "", href: "" },
     "faq.items": { question: "", answer: "" },

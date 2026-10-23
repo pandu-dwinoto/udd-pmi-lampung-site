@@ -35,6 +35,8 @@ const STATIC_FILES = new Map([
   ["/admin/setup.html", ["admin-setup.html", "text/html; charset=utf-8"]],
   ["/admin/login", ["admin-login.html", "text/html; charset=utf-8"]],
   ["/admin/login.html", ["admin-login.html", "text/html; charset=utf-8"]],
+  ["/robots.txt", ["robots.txt", "text/plain; charset=utf-8"]],
+  ["/sitemap.xml", ["sitemap.xml", "application/xml; charset=utf-8"]],
   ["/assets/pmi-official-favicon.png", [path.join("assets", "pmi-official-favicon.png"), "image/png"]]
 ]);
 
