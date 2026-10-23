@@ -18,7 +18,7 @@ Server hanya bind ke `127.0.0.1`; CMS tidak dapat diakses dari jaringan luar. Se
 
 ## Situs publik
 
-Versi publik statis tersedia di <https://pandu-dwinoto.github.io/udd-pmi-lampung-site/>. Source dan CMS tetap berada di repository privat ini; repository publik terpisah hanya berisi halaman, konten, lambang, dan gambar yang memang ditampilkan ke pengunjung. Setelah menyunting CMS lokal, sinkronkan `index.html`, `script.js`, `styles.css`, `content.json`, `robots.txt`, `sitemap.xml`, `assets/pmi-official-favicon.png`, dan aset `media/` yang dipakai ke repository publik lalu push agar situs terbarui. Jangan salin server, halaman CMS, atau folder `private/`. Anggap seluruh konten dan gambar di repository publik sebagai informasi publik.
+Versi publik statis tersedia di <https://pandu-dwinoto.github.io/udd-pmi-lampung-site/>. Source dan CMS tetap berada di repository privat ini; repository publik terpisah hanya berisi halaman, konten, lambang, dan gambar yang memang ditampilkan ke pengunjung. Setelah menyunting CMS lokal, sinkronkan `index.html`, `script.js`, `styles.css`, `content.json`, `robots.txt`, `sitemap.xml`, `assets/pmi-official-favicon.png`, dan aset `media/` yang dipakai ke repository publik lalu push agar situs terbarui. Naikkan token versi `?v=` pada stylesheet/script di `index.html` dan pada URL `content.json` di `script.js` setiap publikasi agar cache pengunjung mengambil versi baru. Jangan salin server, halaman CMS, atau folder `private/`. Anggap seluruh konten dan gambar di repository publik sebagai informasi publik.
 
 ## Menyunting dan memublikasikan konten
 
