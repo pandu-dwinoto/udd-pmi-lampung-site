@@ -1,0 +1,612 @@
+{
+  "language": "id",
+  "meta": {
+    "title": "UDD Pembina PMI Provinsi Lampung | Informasi Donor Darah",
+    "description": "Informasi lokasi UDD Pembina PMI Provinsi Lampung, jadwal donor, aplikasi SaiDonor, dan kanal kontak.",
+    "themeColor": "#f8f5ef",
+    "ogTitle": "",
+    "ogDescription": "",
+    "ogImage": ""
+  },
+  "media": {
+    "logo": "/assets/pmi-official-favicon.png",
+    "heroImage": "/media/7feec85c323f6d29f4b89b56.jpg",
+    "heroImageAlt": "dr. Zam Zanariah Ibrahim mengenakan jas dokter"
+  },
+  "brand": {
+    "shortName": "UDD Pembina PMI",
+    "organization": "PROVINSI LAMPUNG",
+    "accessibleName": "UDD Pembina PMI Provinsi Lampung, beranda"
+  },
+  "navigation": [
+    {
+      "label": "Profil",
+      "href": "#profil"
+    },
+    {
+      "label": "Layanan",
+      "href": "#layanan"
+    },
+    {
+      "label": "SaiDonor",
+      "href": "#saidonor"
+    },
+    {
+      "label": "Informasi",
+      "href": "#informasi"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    },
+    {
+      "label": "Kontak UDD",
+      "href": "#kontak",
+      "cta": true,
+      "suffix": "↗"
+    }
+  ],
+  "hero": {
+    "eyebrow": "UNIT DONOR DARAH PMI",
+    "titleFirst": "Satu kepedulian,",
+    "titleSecond": "banyak harapan.",
+    "description": "Informasi lokasi UDD, jam layanan, dan jadwal gerai donor PMI Lampung.",
+    "primaryAction": {
+      "label": "Lihat lokasi UDD",
+      "href": "https://www.google.com/maps/place/?q=place_id:ChIJLcX8tvvaQC4R0qqmUuzVKXw",
+      "suffix": "↗",
+      "external": true
+    },
+    "secondaryAction": {
+      "label": "Jadwal gerai donor",
+      "href": "https://www.pmilampung.or.id/donor-darah/lokasi-donor",
+      "suffix": "↗",
+      "external": true
+    },
+    "note": "Jam dan jadwal merujuk pada situs PMI Lampung. Konfirmasikan sebelum berkunjung.",
+    "artDescription": "Ilustrasi tetes darah dan kepedulian",
+    "artLabel": "Donor\ndarah",
+    "artCaptionTitle": "dr. Zam Zanariah Ibrahim",
+    "artCaptionDescription": "Plt. Kepala UDD Pembina PMI Provinsi Lampung",
+    "artIndex": "",
+    "artLocation": "",
+    "footerLabel": "INFORMASI PUBLIK",
+    "footerTopics": "DONOR · LAYANAN · KONTAK"
+  },
+  "quickAccess": {
+    "eyebrow": "AKSES CEPAT",
+    "title": "Apa yang Anda cari?",
+    "introduction": "Pilih informasi yang Anda butuhkan.",
+    "items": [
+      {
+        "icon": "⌖",
+        "title": "Lokasi & jam UDD",
+        "description": "Jl. Sam Ratulangi No. 105 · buka 24 jam menurut situs PMI",
+        "href": "https://www.google.com/maps/place/?q=place_id:ChIJLcX8tvvaQC4R0qqmUuzVKXw",
+        "external": true
+      },
+      {
+        "icon": "◷",
+        "title": "Gerai donor Jumat",
+        "description": "Markas PMI · 10.00–15.00 WIB · jadwal dari situs PMI Lampung",
+        "href": "https://www.pmilampung.or.id/donor-darah/lokasi-donor",
+        "external": true
+      },
+      {
+        "icon": "↗",
+        "title": "WhatsApp Humas UDD",
+        "description": "0811 790 3020 · kanal Humas yang tercantum di profil UDD",
+        "href": "https://wa.me/628117903020",
+        "external": true
+      },
+      {
+        "icon": "♥",
+        "title": "Aplikasi SaiDonor",
+        "description": "Lihat aplikasi PMI Provinsi Lampung di Google Play",
+        "href": "https://play.google.com/store/apps/details?id=id.pmilampung.saidonor&hl=id",
+        "external": true
+      }
+    ]
+  },
+  "notice": {
+    "title": "Sebelum berkunjung",
+    "description": "Jam dan jadwal dapat berubah. Periksa kanal sumber atau hubungi kontak yang tersedia.",
+    "linkLabel": "Hubungi UDD",
+    "linkHref": "#kontak",
+    "linkSuffix": "→"
+  },
+  "profile": {
+    "eyebrow": "01 / MENGENAL UDD",
+    "titleFirst": "Informasi yang jelas,",
+    "titleSecond": "langkah yang lebih yakin.",
+    "introduction": "",
+    "tag": "PROFIL LEMBAGA",
+    "name": "Unit Donor Darah PMI",
+    "location": "Provinsi Lampung",
+    "description": "Situs PMI Lampung mencantumkan UDD Pembina buka 24 jam. Ketua PMI Provinsi Lampung periode 2025–2030 adalah Purnama Wulan Sari Mirza.",
+    "confirmation": "Alamat lengkap tersedia di bagian kontak.",
+    "sideNumber": "01",
+    "sideLabel": "TENTANG\nLEMBAGA"
+  },
+  "gallery": {
+    "eyebrow": "DOKUMENTASI UDD",
+    "title": "Wajah di balik layanan.",
+    "introduction": "",
+    "items": [
+      {
+        "image": "/media/316b0450fc7e946075cb9e70.jpg",
+        "alt": "Tiga orang berpose di depan gedung UDD Pembina PMI Provinsi Lampung.",
+        "title": "Kesiapan diri adalah bagian dari kepedulian",
+        "description": "Unggahan Instagram UDD tentang kesiapan donor.",
+        "date": "5 Oktober 2026",
+        "sourceUrl": "https://www.instagram.com/uddpmiprovinsilampung/reel/DeIw9dtTBtc/",
+        "sourceLabel": "Lihat unggahan di Instagram"
+      },
+      {
+        "image": "/media/5cff63378c7e8b940c46295c.jpg",
+        "alt": "Foto bersama staf UDD Pembina di dalam gedung dengan nama unit terlihat di belakang.",
+        "title": "Keluarga besar UDD Pembina",
+        "description": "Foto bersama yang dibagikan melalui akun Instagram resmi UDD.",
+        "date": "4 Oktober 2026",
+        "sourceUrl": "https://www.instagram.com/uddpmiprovinsilampung/reel/DeFyLFkzKfk/",
+        "sourceLabel": "Lihat unggahan di Instagram"
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "02 / INFORMASI LAYANAN",
+    "titleFirst": "Mulai dari yang",
+    "titleSecond": "ingin Anda ketahui.",
+    "introduction": "",
+    "items": [
+      {
+        "number": "01",
+        "icon": "♡",
+        "title": "Donor darah",
+        "description": "Situs PMI Lampung mencantumkan UDD Pembina buka 24 jam dan gerai donor di Markas PMI setiap Jumat, pukul 10.00–15.00 WIB. Konfirmasikan sebelum datang.",
+        "linkLabel": "Sumber PMI Lampung",
+        "href": "https://www.pmilampung.or.id/donor-darah",
+        "external": true
+      },
+      {
+        "number": "02",
+        "icon": "✳",
+        "title": "Layanan UDD",
+        "description": "Untuk informasi layanan dan prosedur, hubungi UDD PMI Provinsi Lampung.",
+        "linkLabel": "Hubungi UDD",
+        "href": "#kontak",
+        "accent": true
+      },
+      {
+        "number": "03",
+        "icon": "⌖",
+        "title": "Lokasi & gerai donor",
+        "description": "Alamat UDD Pembina: Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung. Gerai donor di Markas PMI tercantum setiap Jumat pukul 10.00–15.00 WIB.",
+        "linkLabel": "Lihat lokasi donor",
+        "href": "https://www.pmilampung.or.id/donor-darah/lokasi-donor",
+        "external": true
+      }
+    ]
+  },
+  "app": {
+    "eyebrow": "03 / APLIKASI PMI LAMPUNG",
+    "titleFirst": "SaiDonor,",
+    "titleSecond": "Satu Hati, Sejuta Harapan.",
+    "introduction": "SaiDonor adalah aplikasi PMI Provinsi Lampung. Fitur dan informasi privasinya dirangkum dari Google Play serta dokumen yang ditautkan pengembang.",
+    "developer": "Palang Merah Indonesia (PMI) Provinsi Lampung",
+    "integration": "",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=id.pmilampung.saidonor&hl=id",
+    "playStoreLabel": "Buka di Google Play",
+    "snapshotLabel": "INFO APLIKASI",
+    "snapshot": "Rating usia 12+ · 10 unduhan atau lebih · diperbarui 9 Oktober 2026. Data diperiksa 23 Oktober 2026.",
+    "screenshotsTitle": "Mengenal SaiDonor dari dekat.",
+    "screenshotsNote": "Contoh tampilan, bukan data langsung. Identitas, kontak, dan data donor pribadi telah disamarkan. Angka stok dan agenda hanya cuplikan saat layar diambil; periksa aplikasi untuk informasi terbaru.",
+    "screenshots": [
+      {
+        "src": "/media/266a37d453426d8f0ca6b098.jpg",
+        "alt": "Cuplikan beranda SaiDonor dengan ringkasan fitur; nama, golongan darah, status kesiapan donor, dan statistik pribadi disamarkan.",
+        "title": "Beranda",
+        "description": "Ringkasan fitur yang tersedia di aplikasi."
+      },
+      {
+        "src": "/media/f446655d24dddb7215508b12.jpg",
+        "alt": "Cuplikan halaman Konselor SaiDonor yang menampilkan pilihan topik pertanyaan.",
+        "title": "Konselor",
+        "description": "Tampilan pilihan topik. Isi dan jawaban aplikasi bukan panduan medis dari situs ini."
+      },
+      {
+        "src": "/media/c132a13bc1393b7c552dcf2a.jpg",
+        "alt": "Cuplikan daftar agenda donor yang ditampilkan di SaiDonor.",
+        "title": "Agenda donor",
+        "description": "Contoh tampilan agenda; jadwal dan lokasi dapat berubah."
+      },
+      {
+        "src": "/media/ac91ed62aa4449cefd1b366f.jpg",
+        "alt": "Cuplikan halaman stok darah SaiDonor dengan jumlah komponen berdasarkan golongan darah.",
+        "title": "Stok darah",
+        "description": "Contoh antarmuka stok. Angka pada gambar bukan informasi stok terkini."
+      },
+      {
+        "src": "/media/9373aebcf8d06c2f28bda21e.jpg",
+        "alt": "Cuplikan kartu donor digital SaiDonor dengan identitas, kode, QR, nomor HP, golongan darah, jumlah donor, dan alamat pribadi disamarkan.",
+        "title": "Kartu donor digital",
+        "description": "Contoh tampilan kartu dengan informasi pribadi yang telah ditutup."
+      }
+    ],
+    "featuresLabel": "FITUR DI GOOGLE PLAY",
+    "features": [
+      {
+        "title": "Informasi stok darah",
+        "description": "Cek ketersediaan golongan A, B, AB, O, dan rhesus secara real-time, menurut keterangan Google Play."
+      },
+      {
+        "title": "Kartu donor digital",
+        "description": "Akses kartu donor PMI melalui ponsel."
+      },
+      {
+        "title": "Agenda Mobile Unit",
+        "description": "Lihat jadwal dan lokasi kegiatan donor di luar gedung."
+      },
+      {
+        "title": "Pengingat donor kembali",
+        "description": "Pengingat waktu donor kembali."
+      },
+      {
+        "title": "Riwayat donor dan hasil laboratorium",
+        "description": "Lihat riwayat donor serta status hasil pemeriksaan yang tercantum di aplikasi."
+      },
+      {
+        "title": "Edukasi kependonoran",
+        "description": "Materi manfaat donor, syarat, ketentuan, dan kesehatan."
+      }
+    ],
+    "releaseLabel": "CATATAN PEMBARUAN",
+    "releaseVersion": "Versi 1.0.2 · diperbarui 9 Oktober 2026",
+    "releaseItems": [
+      "Informasi stok darah real-time.",
+      "Jadwal dan lokasi kegiatan donor.",
+      "Berita PMI, edukasi kesehatan, dan informasi kegiatan sukarelawan.",
+      "Akses cepat ke telepon dan lokasi Markas/UDD PMI Lampung."
+    ],
+    "contactLabel": "KONTAK PENGEMBANG DI GOOGLE PLAY",
+    "contacts": [
+      {
+        "label": "Organisasi",
+        "value": "Palang Merah Indonesia (PMI) Provinsi Lampung"
+      },
+      {
+        "label": "Alamat dukungan aplikasi",
+        "value": "Jl. Hasanuddin No. 26, Teluk Betung, Bandar Lampung — sebagaimana dicantumkan di Google Play"
+      },
+      {
+        "label": "Email dukungan aplikasi",
+        "value": "apps.pmilampung@gmail.com",
+        "href": "mailto:apps.pmilampung@gmail.com"
+      },
+      {
+        "label": "Situs",
+        "value": "pmilampung.or.id",
+        "href": "https://pmilampung.or.id"
+      }
+    ],
+    "privacyLabel": "RINGKASAN KEAMANAN DATA",
+    "privacyIntro": "Ringkasan pengungkapan Google Play dan kebijakan privasi yang ditautkan pengembang.",
+    "dataSafetyClaims": [
+      "Pengembang menyatakan di Google Play bahwa data tidak dibagikan kepada pihak ketiga.",
+      "Google Play menyebut data dienkripsi saat dikirim dan pengguna dapat meminta penghapusan data."
+    ],
+    "dataCollected": [
+      {
+        "category": "Info pribadi",
+        "details": "Keamanan Data Google Play mencantumkan nama, alamat, dan nomor telepon. Kebijakan privasi tertaut juga menyebut NIK dan tanggal lahir untuk pendaftaran/verifikasi masuk, serta nama lengkap, kode pendonor, nomor HP/WhatsApp, dan alamat."
+      },
+      {
+        "category": "Kesehatan dan kebugaran",
+        "details": "Google Play mencantumkan info kesehatan. Kebijakan privasi tertaut menyebut golongan darah, rhesus, jumlah/riwayat donor, dan status hasil pemeriksaan laboratorium."
+      },
+      {
+        "category": "Perangkat atau ID lainnya",
+        "details": "Google Play mencantumkan perangkat atau ID lainnya. Kebijakan privasi tertaut menyebut token notifikasi push yang dipadukan dengan golongan darah untuk pemberitahuan kebutuhan donor."
+      }
+    ],
+    "privacyPurposes": [
+      "Menampilkan kartu donor digital dan memverifikasi akun pendonor terhadap data UDD/SIMDONDAR.",
+      "Menyediakan pengingat donor kembali, pengumuman stok, agenda Mobile Unit, edukasi, dan imbauan kebutuhan donor mendesak."
+    ],
+    "privacyOtherClaims": [
+      "Kebijakan privasi tertaut menyatakan aplikasi tidak mengakses GPS, kontak telepon, galeri/foto, mikrofon, atau data aplikasi lain.",
+      "Dokumen menyatakan komunikasi memakai HTTPS, sesi lokal dihapus saat logout dan dikecualikan dari cadangan cloud, serta data tidak dijual, digunakan untuk iklan, atau dibagikan untuk pemasaran komersial.",
+      "Dokumen menyebut pengguna dapat melihat data pada menu Kartu Donor dan mengajukan pembetulan data kepada petugas UDD.",
+      "Dokumen menyatakan data induk kependonoran dan rekam medis tersimpan permanen pada server PMI sesuai ketentuan yang disebut di dokumen; dokumen juga menyebut data tersebut tidak dapat dihapus atas permintaan mandiri. Dasar dan masa retensinya perlu dikonfirmasi kepada pengembang.",
+      "Dokumen menyebut aplikasi tidak ditujukan untuk anak di bawah 17 tahun, perubahan kebijakan akan diinformasikan melalui pembaruan aplikasi, dan penggunaan aplikasi selanjutnya dianggap sebagai persetujuan atas kebijakan yang berlaku."
+    ],
+    "privacyPolicyUrl": "https://docs.google.com/document/d/e/2PACX-1vSSzw8drGEL33LNhHKPMzvrPj6Ib7RAGJw7J16Eoxt6EjeAw8iG3VfU2eyZLE_tb-Sz4JPmXiCBofiQ/pub",
+    "dataSafetyUrl": "https://play.google.com/store/apps/datasafety?id=id.pmilampung.saidonor&hl=id",
+    "privacyPolicyLabel": "Baca kebijakan privasi SaiDonor",
+    "dataSafetyLabel": "Lihat Keamanan Data di Google Play",
+    "discrepancyLabel": "PERBEDAAN INFORMASI PADA SUMBER",
+    "discrepancies": [
+      "Batas usia: rating Google Play tercantum 12+, sedangkan kebijakan privasi tertaut menyatakan aplikasi tidak ditujukan bagi anak di bawah 17 tahun. Ini ketidaksesuaian informasi aplikasi, bukan panduan kelayakan donor.",
+      "Alamat: Google Play mencantumkan Jl. Hasanuddin No. 26, Teluk Betung; kebijakan privasi tertaut mencantumkan Jl. Sam Ratulangi No. 105, Kedaton. Bio Instagram dan Linktree UDD mencantumkan Jl. Sam Ratulangi No. 105, Penengahan, sesuai alamat UDD pada halaman ini. Pastikan lokasi dan unit tujuan sebelum berkunjung.",
+      "Penghapusan data: Google Play menyebut pengguna dapat meminta penghapusan data; kebijakan privasi tertaut menyebut data induk kependonoran dan rekam medis tidak dapat dihapus atas permintaan mandiri. Minta penjelasan pengembang mengenai cakupan dan prosedurnya."
+    ],
+    "sourceNote": "Ringkasan fitur dan privasi ini mengacu pada Google Play dan dokumen pengembang. Diperiksa pada 23 Oktober 2026; informasi dapat berubah.",
+    "references": [
+      {
+        "label": "Aplikasi SaiDonor di Google Play",
+        "href": "https://play.google.com/store/apps/details?id=id.pmilampung.saidonor&hl=id"
+      },
+      {
+        "label": "Keamanan Data Google Play",
+        "href": "https://play.google.com/store/apps/datasafety?id=id.pmilampung.saidonor&hl=id"
+      },
+      {
+        "label": "Kebijakan privasi SaiDonor",
+        "href": "https://docs.google.com/document/d/e/2PACX-1vSSzw8drGEL33LNhHKPMzvrPj6Ib7RAGJw7J16Eoxt6EjeAw8iG3VfU2eyZLE_tb-Sz4JPmXiCBofiQ/pub"
+      }
+    ]
+  },
+  "updates": {
+    "eyebrow": "04 / KABAR & KEGIATAN",
+    "titleFirst": "Ikuti kabar UDD,",
+    "titleSecond": "dari kanal resminya.",
+    "status": "KANAL DIGITAL UDD",
+    "emptyIcon": "✳",
+    "emptyTitle": "Belum ada kabar terbaru ditampilkan",
+    "emptyDescription": "Lihat unggahan langsung melalui kanal resmi UDD. Informasi stok dan agenda pada unggahan lama bukan informasi terkini.",
+    "entries": [],
+    "footnote": "Tautan di bawah mengarah ke kanal UDD dan arsip kegiatan. Untuk memastikan jadwal atau layanan, hubungi UDD.",
+    "referencesLabel": "KANAL & ARSIP UDD",
+    "references": [
+      {
+        "label": "Instagram UDD",
+        "href": "https://www.instagram.com/uddpmiprovinsilampung/"
+      },
+      {
+        "label": "YouTube UDD",
+        "href": "https://www.youtube.com/@uddpmiprovinsilampung"
+      },
+      {
+        "label": "Arsip kegiatan UDD · 2022",
+        "href": "https://lampungprov.go.id/detail-post/provinsi-lampung-tuan-rumah-pertemuan-regional-i-unit-donor-darah-udd-pmi-tahun-2022-se-sumatera-banten-dan-dki-jakarta"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "05 / PERTANYAAN UMUM",
+    "titleFirst": "Ada yang ingin",
+    "titleSecond": "ditanyakan?",
+    "introduction": "Untuk persyaratan dan kondisi kesehatan, mintalah informasi langsung dari petugas UDD.",
+    "contactLabel": "Hubungi UDD",
+    "contactHref": "#kontak",
+    "items": [
+      {
+        "question": "Di mana lokasi UDD Pembina PMI Provinsi Lampung?",
+        "answer": "UDD Pembina berada di Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung. Situs PMI Lampung mencantumkan gerai donor di Markas PMI setiap Jumat, pukul 10.00–15.00 WIB."
+      },
+      {
+        "question": "Kapan waktu layanan donor?",
+        "answer": "Situs PMI Lampung mencantumkan UDD Pembina buka 24 jam. Gerai donor di Markas PMI dijadwalkan setiap Jumat, pukul 10.00–15.00 WIB. Jadwal layanan tertentu dapat berbeda."
+      },
+      {
+        "question": "Apa persyaratan untuk donor darah?",
+        "answer": "Persyaratan donor mengikuti ketentuan dan pemeriksaan petugas. Hubungi UDD untuk informasi terbaru."
+      },
+      {
+        "question": "Bagaimana cara mendapatkan informasi layanan?",
+        "answer": "Hubungi WhatsApp Humas UDD di 0811 790 3020. Call Center PMI Provinsi Lampung dapat dihubungi di 0811 7979 972; nomor ini bukan kontak khusus UDD."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "06 / KONTAK & KUNJUNGAN",
+    "titleFirst": "Butuh informasi?",
+    "titleSecond": "Hubungi UDD.",
+    "introduction": "Alamat, nomor Humas UDD, dan Call Center PMI Provinsi Lampung.",
+    "items": [
+      {
+        "label": "CALL CENTER PMI PROVINSI LAMPUNG",
+        "value": "0811 7979 972",
+        "href": "tel:+628117979972"
+      },
+      {
+        "label": "ALAMAT UDD PEMBINA",
+        "value": "Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung"
+      },
+      {
+        "label": "WHATSAPP HUMAS UDD",
+        "value": "0811 790 3020",
+        "href": "https://wa.me/628117903020"
+      },
+      {
+        "label": "JAM UDD PEMBINA",
+        "value": "24 jam — tercantum di situs PMI Lampung"
+      }
+    ],
+    "footnote": "Call Center PMI Provinsi Lampung adalah kanal tingkat provinsi, bukan kontak khusus UDD. WhatsApp Humas tercantum pada profil dan Linktree UDD.",
+    "social": {
+      "eyebrow": "KANAL DIGITAL",
+      "title": "Kanal & lokasi",
+      "description": "Tautan digital dan lokasi UDD, serta akun PMI Provinsi Lampung yang terkait.",
+      "channels": [
+        {
+          "label": "Instagram",
+          "value": "@uddpmiprovinsilampung",
+          "description": "Profil Instagram UDD Pembina PMI Provinsi Lampung.",
+          "href": "https://www.instagram.com/uddpmiprovinsilampung/"
+        },
+        {
+          "label": "TikTok",
+          "value": "@udd.pmi.provinsi.lampung",
+          "description": "Akun TikTok yang ditautkan melalui Linktree UDD.",
+          "href": "https://www.tiktok.com/@udd.pmi.provinsi.lampung"
+        },
+        {
+          "label": "Facebook",
+          "value": "Udd Pmi",
+          "description": "Halaman Facebook yang ditautkan melalui Linktree UDD.",
+          "href": "https://www.facebook.com/profile.php?id=100085154675570"
+        },
+        {
+          "label": "YouTube",
+          "value": "UDD PMI Provinsi Lampung",
+          "description": "Kanal YouTube UDD yang ditautkan melalui Linktree.",
+          "href": "https://www.youtube.com/@uddpmiprovinsilampung"
+        },
+        {
+          "label": "WhatsApp Humas UDD",
+          "value": "0811 790 3020",
+          "description": "Nomor Humas yang dicantumkan di bio Instagram dan Linktree UDD.",
+          "href": "https://wa.me/628117903020"
+        },
+        {
+          "label": "Linktree",
+          "value": "Kumpulan tautan UDD",
+          "description": "Tautan ke kanal sosial, WhatsApp Humas, dan lokasi UDD.",
+          "href": "https://linktr.ee/UDDPEMBINAPMIPROVINSILAMPUNG"
+        },
+        {
+          "label": "Lokasi di Google Maps",
+          "value": "UDD Pembina PMI Provinsi Lampung",
+          "description": "Lokasi UDD Pembina di Google Maps.",
+          "href": "https://www.google.com/maps/place/?q=place_id:ChIJLcX8tvvaQC4R0qqmUuzVKXw"
+        },
+        {
+          "label": "Instagram PMI Provinsi (akun terkait)",
+          "value": "@pmilampung",
+          "description": "Akun PMI Provinsi Lampung, bukan akun khusus UDD.",
+          "href": "https://www.instagram.com/pmilampung/"
+        },
+        {
+          "label": "YouTube PMI Provinsi (akun terkait)",
+          "value": "@pmilampung8666",
+          "description": "Kanal PMI Provinsi Lampung, bukan kanal khusus UDD.",
+          "href": "https://www.youtube.com/@pmilampung8666"
+        }
+      ],
+      "contentLabel": "Sorotan dan video pilihan",
+      "contentItems": [
+        {
+          "platform": "Instagram",
+          "category": "Sorotan",
+          "title": "Edukasi",
+          "description": "Sorotan “Edukasi” pada profil Instagram UDD.",
+          "linkLabel": "Buka sorotan",
+          "href": "https://www.instagram.com/stories/highlights/17869062462422311/"
+        },
+        {
+          "platform": "Instagram",
+          "category": "Sorotan",
+          "title": "Syarat Donor",
+          "description": "Sorotan “Syarat Donor” pada profil Instagram UDD. Untuk ketentuan terbaru, hubungi petugas.",
+          "linkLabel": "Buka sorotan",
+          "href": "https://www.instagram.com/stories/highlights/18110456567011648/"
+        },
+        {
+          "platform": "Instagram",
+          "category": "Sorotan",
+          "title": "Mitos dan Fakta",
+          "description": "Sorotan “Mitos dan Fakta” pada profil Instagram UDD.",
+          "linkLabel": "Buka sorotan",
+          "href": "https://www.instagram.com/stories/highlights/18093460925433097/"
+        },
+        {
+          "platform": "Instagram",
+          "category": "Sorotan",
+          "title": "Aplikasi Donorku",
+          "description": "Sorotan aplikasi pada profil Instagram UDD.",
+          "linkLabel": "Buka sorotan",
+          "href": "https://www.instagram.com/stories/highlights/18028988932962654/"
+        },
+        {
+          "platform": "Instagram",
+          "category": "Pengumuman historis · 13–20 Oktober 2026",
+          "title": "Pengumuman persediaan golongan AB dan B",
+          "description": "Unggahan menyebut persediaan AB dan B tercukupi pada 13–20 Oktober 2026. Periode tersebut telah berakhir; informasi ini hanya arsip dan bukan data stok saat ini.",
+          "linkLabel": "Buka unggahan sumber",
+          "href": "https://www.instagram.com/uddpmiprovinsilampung/p/DeYNLqYTLTk/"
+        },
+        {
+          "platform": "YouTube",
+          "category": "Video · edukasi",
+          "title": "SYARAT DONOR DARAH",
+          "description": "Video edukasi pada kanal YouTube UDD. Hubungi petugas untuk persyaratan terbaru.",
+          "linkLabel": "Tonton di YouTube",
+          "href": "https://www.youtube.com/watch?v=gfS8sWJO-44"
+        },
+        {
+          "platform": "YouTube",
+          "category": "Video · profil",
+          "title": "Company Profile Unit Donor Darah Pembina PMI Provinsi Lampung",
+          "description": "Video profil kelembagaan pada kanal YouTube UDD.",
+          "linkLabel": "Tonton di YouTube",
+          "href": "https://www.youtube.com/watch?v=ckuFZfs0DDQ"
+        },
+        {
+          "platform": "YouTube",
+          "category": "Video · fasilitas",
+          "title": "Pojok Baca UDD Pembina PMI Provinsi Lampung",
+          "description": "Video Pojok Baca pada kanal YouTube UDD.",
+          "linkLabel": "Tonton di YouTube",
+          "href": "https://www.youtube.com/watch?v=bTQwrz4JxOc"
+        },
+        {
+          "platform": "YouTube",
+          "category": "Video · fasilitas",
+          "title": "Caffe Donor UDD Pembina PMI Provinsi Lampung",
+          "description": "Video Caffe Donor pada kanal YouTube UDD.",
+          "linkLabel": "Tonton di YouTube",
+          "href": "https://www.youtube.com/watch?v=2-fl0oIhxD4"
+        },
+        {
+          "platform": "YouTube",
+          "category": "Video · kegiatan",
+          "title": "Siger Donor Darah - PDDI (Panti Asuhan Ar Ra'uf Syahira)",
+          "description": "Dokumentasi kegiatan donor darah. Video ini bukan jadwal kegiatan mendatang.",
+          "linkLabel": "Tonton di YouTube",
+          "href": "https://www.youtube.com/watch?v=PpJ8JOL0c2U"
+        },
+        {
+          "platform": "YouTube",
+          "category": "Video · apresiasi",
+          "title": "UDD Pembina PMI Beri Apresiasi Untuk Pendonor #donordarah",
+          "description": "Video apresiasi pendonor pada kanal YouTube UDD.",
+          "linkLabel": "Tonton di YouTube",
+          "href": "https://www.youtube.com/shorts/bpMXk_IUgGk"
+        },
+        {
+          "platform": "YouTube",
+          "category": "Video · dokumentasi",
+          "title": "Pengundian Donor Darah Sukarela dan Blood Donor Award Tahun 2025",
+          "description": "Dokumentasi kegiatan tahun 2025.",
+          "linkLabel": "Tonton di YouTube",
+          "href": "https://www.youtube.com/watch?v=C05fBROVrlI"
+        },
+        {
+          "platform": "YouTube",
+          "category": "Video · dokumentasi",
+          "title": "PMI Provinsi Lampung — Pengiriman bantuan 400 kantong darah dan 2 unit mobil tangki air",
+          "description": "Dokumentasi pengiriman bantuan oleh PMI Provinsi Lampung.",
+          "linkLabel": "Tonton di YouTube",
+          "href": "https://www.youtube.com/watch?v=uNO_KaxYxj4"
+        }
+      ],
+      "profileSummary": "Tautan UDD dan PMI Provinsi Lampung bersumber dari profil Instagram dan Linktree UDD. Pilihan konten mengarah ke unggahan sumber; kunjungi kanal terkait untuk informasi terbaru.",
+      "checkedAt": "Tautan diperiksa 23 Oktober 2026."
+    }
+  },
+  "footer": {
+    "descriptionFirst": "",
+    "descriptionSecond": "",
+    "backToTop": "Kembali ke atas",
+    "copyrightPrefix": "© ",
+    "copyrightSuffix": " · Informasi UDD Pembina",
+    "note": ""
+  },
+  "ui": {
+    "skipLink": "Lewati ke konten utama",
+    "menuOpen": "Buka menu navigasi",
+    "menuClose": "Tutup menu navigasi",
+    "sectionNavigation": "Navigasi utama"
+  }
+}
