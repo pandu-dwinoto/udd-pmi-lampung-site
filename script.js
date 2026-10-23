@@ -3,7 +3,8 @@
 let activeSiteContent;
 let motionObserver;
 let motionTimeout;
-const OFFICIAL_PMI_LOGO = "/assets/pmi-official-favicon.png";
+const SITE_ROOT = new URL("./", window.location.href);
+const OFFICIAL_PMI_LOGO = new URL("assets/pmi-official-favicon.png", SITE_ROOT).pathname;
 
 const escapeHTML = (value) => String(value ?? "").replace(/[&<>"']/g, (character) => ({
   "&": "&amp;",
@@ -22,7 +23,8 @@ const safeHref = (value) => {
 
 const safeMediaPath = (value) => {
   const path = String(value ?? "");
-  return /^\/media\/[a-f0-9]{24}\.(?:png|jpg|webp)$/i.test(path) || path === "/assets/pmi-official-favicon.png" ? path : "";
+  if (!(/^\/media\/[a-f0-9]{24}\.(?:png|jpg|webp)$/i.test(path) || path === "/assets/pmi-official-favicon.png")) return "";
+  return new URL(path.slice(1), SITE_ROOT).pathname;
 };
 
 const linkMarkup = (item, className = "") => {
@@ -498,7 +500,10 @@ function renderSite(content) {
   initializeMotion();
 }
 
-fetch("/api/content", { headers: { Accept: "application/json" } })
+const localServer = ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname);
+const contentUrl = localServer ? "/api/content" : new URL("content.json", SITE_ROOT).href;
+
+fetch(contentUrl, { headers: { Accept: "application/json" } })
   .then((response) => {
     if (!response.ok) throw new Error(`Content request failed: ${response.status}`);
     return response.json();
@@ -517,6 +522,6 @@ fetch("/api/content", { headers: { Accept: "application/json" } })
     console.error(error);
     const message = document.createElement("p");
     message.setAttribute("role", "alert");
-    message.textContent = "Konten situs belum dapat dimuat. Jalankan server lokal sesuai README dan pastikan content.json tersedia.";
+    message.textContent = "Konten situs belum dapat dimuat. Pastikan server situs aktif atau content.json tersedia.";
     document.querySelector("main").replaceChildren(message);
   });

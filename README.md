@@ -16,6 +16,10 @@ Alternatifnya, jalankan `npm.cmd start` dari PowerShell. `node setup-admin.js` t
 
 Server hanya bind ke `127.0.0.1`; CMS tidak dapat diakses dari jaringan luar. Setup akun pertama hanya aktif jika akun belum ada dan hanya menerima koneksi lokal. Login membatasi percobaan, sesi memakai cookie `HttpOnly`/`SameSite=Strict`, dan perubahan CMS memerlukan token CSRF. Jangan membuka port server ke internet atau memublikasikan folder `private/`.
 
+## Situs publik
+
+Workflow GitHub Pages menerbitkan versi statis situs setiap ada perubahan ke branch `main`. Hanya `index.html`, `script.js`, `styles.css`, `content.json`, lambang, dan aset di `media/` yang diterbitkan; server dan halaman CMS tidak disertakan. Karena itu, penyuntingan melalui CMS lokal tidak otomatis memperbarui situs publik—perubahan `content.json` harus di-commit dan di-push. Anggap seluruh konten dan gambar yang dipush ke branch `main` sebagai informasi publik. Kredensial admin tetap berada di `private/` dan tidak boleh ditambahkan ke repository.
+
 ## Menyunting dan memublikasikan konten
 
 Masuk ke CMS, pilih bagian dari navigasi editor, lalu ubah kolom yang diperlukan. Semua teks situs, metadata SEO, menu, layanan, kontak, jam, FAQ, berita/kegiatan, dan tautan referensi disimpan sebagai satu sumber terstruktur di `content.json`; CMS menyediakan tambah/hapus dan pengurutan item pada daftar seperti menu, layanan, berita, referensi, FAQ, dan kontak. Unggah logo/gambar opsional dari bagian **Media** (PNG, JPEG, WebP hingga 5 MB); file disimpan lokal di folder `media/` dan dapat disajikan secara publik sebagai aset situs. Jangan unggah foto sensitif atau data pribadi. Gunakan **Pratinjau draf** sebelum **Simpan & publikasikan**. Publikasi menyimpan perubahan ke `content.json`; versi sebelumnya dicadangkan di `content.json.bak`.
