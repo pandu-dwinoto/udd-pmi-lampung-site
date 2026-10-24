@@ -112,11 +112,14 @@ function renderProfile(content) {
   const profile = content.profile;
   setHTML('[data-render="profile"]', `
     <div class="section-heading"><div><p class="eyebrow">${escapeHTML(profile.eyebrow)}</p><h2 id="profil-title">${escapeHTML(profile.titleFirst)}<br><span>${escapeHTML(profile.titleSecond)}</span></h2></div><p class="section-intro">${escapeHTML(profile.introduction)}</p></div>
-    ${content.media.leadershipImage ? `<figure class="leadership-portrait"><img src="${escapeHTML(safeMediaPath(content.media.leadershipImage))}" alt="${escapeHTML(content.media.leadershipImageAlt)}" loading="lazy" width="88" height="104"><figcaption><span>PIMPINAN UDD PEMBINA</span><strong>${escapeHTML(profile.leadership?.[1]?.name || '')}</strong><p>${escapeHTML(profile.leadership?.[1]?.role || '')}</p></figcaption></figure>` : ''}
-    <div class="profile-panel">
-      <div class="profile-emblem"><img src="${escapeHTML(safeMediaPath(content.media && content.media.logo) || OFFICIAL_PMI_LOGO)}" alt="${escapeHTML((content.ui && content.ui.profileLogoAlt) || "Lambang Palang Merah Indonesia")}"></div>
-      <div class="profile-text"><span class="tag">${escapeHTML(profile.tag)}</span><h3>${escapeHTML(profile.name)}<br>${escapeHTML(profile.location)}</h3><p>${escapeHTML(profile.description)}</p><span class="pending-inline"><span></span> ${escapeHTML(profile.confirmation)}</span></div>
-      <div class="profile-side"><span class="side-number">${escapeHTML(profile.sideNumber)}</span><span class="side-rule"></span><span class="side-label">${escapeHTML(profile.sideLabel).replace(/\n/g, "<br>")}</span></div>
+    <div class="profile-overview">
+      <div class="profile-panel">
+        <div class="profile-emblem"><img src="${escapeHTML(safeMediaPath(content.media && content.media.logo) || OFFICIAL_PMI_LOGO)}" alt="${escapeHTML((content.ui && content.ui.profileLogoAlt) || "Lambang Palang Merah Indonesia")}"></div>
+        <div class="profile-text"><span class="tag">${escapeHTML(profile.tag)}</span><h3>${escapeHTML(profile.name)}<br>${escapeHTML(profile.location)}</h3><p>${escapeHTML(profile.description)}</p></div>
+        <div class="profile-facts">${listOf(profile.facts).map((item) => `<div><span>${escapeHTML(item.label)}</span><strong>${escapeHTML(item.value)}</strong></div>`).join("")}</div>
+        <div class="profile-side"><span class="side-number">${escapeHTML(profile.sideNumber)}</span><span class="side-rule"></span><span class="side-label">${escapeHTML(profile.sideLabel).replace(/\n/g, "<br>")}</span></div>
+      </div>
+      ${content.media.leadershipImage ? `<figure class="leadership-portrait"><img src="${escapeHTML(safeMediaPath(content.media.leadershipImage))}" alt="${escapeHTML(content.media.leadershipImageAlt)}" loading="lazy" width="88" height="104"><figcaption><span>PIMPINAN UDD PEMBINA</span><strong>${escapeHTML(profile.leadership?.[1]?.name || '')}</strong><p>${escapeHTML(profile.leadership?.[1]?.role || '')}</p></figcaption></figure>` : ''}
     </div>
     ${content.media.profileImage ? `<figure class="profile-showcase"><img src="${escapeHTML(safeMediaPath(content.media.profileImage))}" alt="${escapeHTML(content.media.profileImageAlt || "Ilustrasi suasana layanan UDD")}" loading="lazy"><figcaption>ILUSTRASI SUASANA PELAYANAN</figcaption></figure>` : ""}
     ${profileDetails(profile)}
@@ -740,7 +743,9 @@ function refineExperience() {
   hero.after(document.querySelector('.quick-access'));
   document.querySelector('.quick-access').prepend(finder);
   document.querySelector('.quick-access').after(document.querySelector('.notice-band'));
-  document.querySelector('.notice-band').after(document.getElementById('layanan'));
+  const profileSection = document.getElementById('profil');
+  document.querySelector('.notice-band').after(profileSection);
+  profileSection.after(document.getElementById('layanan'));
   const fold = (selector, title) => {
     const nodes = Array.from(document.querySelectorAll(selector));
     if (!nodes.length) return;
@@ -812,7 +817,7 @@ function renderSite(content) {
 }
 
 const localServer = ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname);
-const contentUrl = localServer ? "/api/content" : new URL("content.json?v=20261024-1123", SITE_ROOT).href;
+const contentUrl = localServer ? "/api/content" : new URL("content.json?v=20261024-1126", SITE_ROOT).href;
 
 fetch(contentUrl, { headers: { Accept: "application/json" } })
   .then((response) => {

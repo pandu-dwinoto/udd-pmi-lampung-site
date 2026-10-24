@@ -121,15 +121,19 @@
     "linkSuffix": "\u2192"
   },
   "profile": {
-    "eyebrow": "01 / MENGENAL UDD",
-    "titleFirst": "Melayani kebutuhan darah",
+    "eyebrow": "TENTANG UDD PEMBINA",
+    "titleFirst": "Pelayanan darah",
     "titleSecond": "untuk masyarakat Lampung.",
-    "introduction": "Unit Donor Darah (UDD) Pembina adalah unit pelayanan darah Palang Merah Indonesia Provinsi Lampung.",
+    "introduction": "UDD Pembina PMI Provinsi Lampung menyelenggarakan pelayanan darah untuk mendukung kebutuhan transfusi di fasilitas kesehatan.",
     "tag": "PROFIL LEMBAGA",
     "name": "Unit Donor Darah Pembina PMI",
     "location": "Provinsi Lampung",
-    "description": "UDD Pembina PMI Provinsi Lampung melayani pengambilan, pengolahan, dan penyediaan darah bagi fasilitas kesehatan di Provinsi Lampung. Permintaan darah dilayani 24 jam setiap hari, sedangkan donor darah dilayani pukul 07.30–21.00 WIB.",
-    "confirmation": "Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung · permintaan darah 24 jam · donor 07.30–21.00 WIB",
+    "description": "Pelayanan meliputi donor darah, pengolahan komponen darah, dan penyediaan darah bagi fasilitas kesehatan di Provinsi Lampung.",
+    "facts": [
+      { "label": "Alamat", "value": "Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung" },
+      { "label": "Permintaan darah", "value": "24 jam setiap hari" },
+      { "label": "Donor darah", "value": "Setiap hari · 07.30–21.00 WIB" }
+    ],
     "sideNumber": "01",
     "sideLabel": "TENTANG\nLEMBAGA",
     "functionsTitle": "Lingkup layanan",
