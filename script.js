@@ -111,7 +111,7 @@ function renderNotice(content) {
 function renderProfile(content) {
   const profile = content.profile;
   setHTML('[data-render="profile"]', `
-    <div class="section-heading"><div><p class="eyebrow">${escapeHTML(profile.eyebrow)}</p><h2 id="profil-title">${escapeHTML(profile.titleFirst)}<br><span>${escapeHTML(profile.titleSecond)}</span></h2></div><p class="section-intro">${escapeHTML(profile.introduction)}</p></div>
+    ${(profile.eyebrow || profile.titleFirst || profile.titleSecond || profile.introduction) ? `<div class="section-heading profile-heading"><div>${profile.eyebrow ? `<p class="eyebrow">${escapeHTML(profile.eyebrow)}</p>` : ""}${profile.titleFirst ? `<h2 id="profil-title">${escapeHTML(profile.titleFirst)}${profile.titleSecond ? `<br><span>${escapeHTML(profile.titleSecond)}</span>` : ""}</h2>` : ""}</div>${profile.introduction ? `<p class="section-intro">${escapeHTML(profile.introduction)}</p>` : ""}</div>` : ""}
     <div class="profile-overview">
       <div class="profile-panel">
         <div class="profile-emblem"><img src="${escapeHTML(safeMediaPath(content.media && content.media.logo) || OFFICIAL_PMI_LOGO)}" alt="${escapeHTML((content.ui && content.ui.profileLogoAlt) || "Lambang Palang Merah Indonesia")}"></div>
@@ -121,7 +121,7 @@ function renderProfile(content) {
       </div>
       ${content.media.leadershipImage ? `<figure class="leadership-portrait"><img src="${escapeHTML(safeMediaPath(content.media.leadershipImage))}" alt="${escapeHTML(content.media.leadershipImageAlt)}" loading="lazy" width="88" height="104"><figcaption><span>PIMPINAN UDD PEMBINA</span><strong>${escapeHTML(profile.leadership?.[1]?.name || '')}</strong><p>${escapeHTML(profile.leadership?.[1]?.role || '')}</p></figcaption></figure>` : ''}
     </div>
-    ${content.media.profileImage ? `<figure class="profile-showcase"><img src="${escapeHTML(safeMediaPath(content.media.profileImage))}" alt="${escapeHTML(content.media.profileImageAlt || "Ilustrasi suasana layanan UDD")}" loading="lazy"><figcaption>ILUSTRASI SUASANA PELAYANAN</figcaption></figure>` : ""}
+    ${content.media.profileImage ? `<figure class="profile-showcase"><img src="${escapeHTML(safeMediaPath(content.media.profileImage))}" alt="${escapeHTML(content.media.profileImageAlt || "Ilustrasi suasana layanan UDD")}" loading="lazy"><figcaption>${escapeHTML(content.media.profileImageCaption || "ILUSTRASI SUASANA PELAYANAN")}</figcaption></figure>` : ""}
     ${profileDetails(profile)}
   `);
 }
@@ -147,8 +147,10 @@ function listOf(value) {
   return Array.isArray(value) ? value : [];
 }
 
-const stepList = (steps) => `<ol class="step-list">${listOf(steps).map((step, index) => `
-  <li><span class="step-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span><div><h4>${escapeHTML(step.title)}</h4><p>${escapeHTML(step.description)}</p></div></li>`).join("")}</ol>`;
+const stepList = (steps) => `<ol class="step-list">${listOf(steps).map((step, index) => {
+  const imagePath = safeMediaPath(step.image);
+  return `<li class="${imagePath ? "step-list--visual" : ""}">${imagePath ? `<img class="donor-step-image" src="${escapeHTML(imagePath)}" alt="" aria-hidden="true" loading="lazy">` : ""}<span class="step-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span><div><h4>${escapeHTML(step.title)}</h4><p>${escapeHTML(step.description)}</p></div></li>`;
+}).join("")}</ol>`;
 
 const requestFlowList = (steps) => `<ol class="request-flow-list">${listOf(steps).map((step, index) => {
   const imagePath = safeMediaPath(step.image);
@@ -740,12 +742,14 @@ function refineExperience() {
     if (section) main.append(section);
   });
   const hero = document.getElementById('beranda');
-  hero.after(document.querySelector('.quick-access'));
-  document.querySelector('.quick-access').prepend(finder);
-  document.querySelector('.quick-access').after(document.querySelector('.notice-band'));
   const profileSection = document.getElementById('profil');
-  document.querySelector('.notice-band').after(profileSection);
-  profileSection.after(document.getElementById('layanan'));
+  const quickAccess = document.querySelector('.quick-access');
+  const noticeBand = document.querySelector('.notice-band');
+  hero.after(profileSection);
+  profileSection.after(quickAccess);
+  quickAccess.prepend(finder);
+  quickAccess.after(noticeBand);
+  noticeBand.after(document.getElementById('layanan'));
   const fold = (selector, title) => {
     const nodes = Array.from(document.querySelectorAll(selector));
     if (!nodes.length) return;
@@ -817,7 +821,7 @@ function renderSite(content) {
 }
 
 const localServer = ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname);
-const contentUrl = localServer ? "/api/content" : new URL("content.json?v=20261024-1126", SITE_ROOT).href;
+const contentUrl = localServer ? "/api/content" : new URL("content.json?v=20261024-1152", SITE_ROOT).href;
 
 fetch(contentUrl, { headers: { Accept: "application/json" } })
   .then((response) => {

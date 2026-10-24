@@ -10,10 +10,8 @@
   },
   "media": {
     "logo": "/assets/pmi-official-favicon.png",
-    "heroImage": "/media/0a1b2c3d4e5f60718293a4b5.png",
-    "heroImageAlt": "Pendonor darah didampingi tenaga kesehatan di ruang donor yang terang dan nyaman",
-    "profileImage": "/media/1a2b3c4d5e6f708192a3b4c5.png",
-    "profileImageAlt": "Ilustrasi suasana pelayanan dan konsultasi di UDD",
+    "heroImage": "/media/6a7b8c9d0e1f223344556677.png",
+    "heroImageAlt": "Pendonor darah didampingi petugas UDD berhijab dengan seragam berlambang PMI di ruang donor",
     "leadershipImage": "/media/7feec85c323f6d29f4b89b56.jpg",
     "leadershipImageAlt": "dr. Zam Zanariah Ibrahim, Plt. Kepala UDD Pembina"
   },
@@ -121,10 +119,10 @@
     "linkSuffix": "\u2192"
   },
   "profile": {
-    "eyebrow": "TENTANG UDD PEMBINA",
-    "titleFirst": "Pelayanan darah",
-    "titleSecond": "untuk masyarakat Lampung.",
-    "introduction": "UDD Pembina PMI Provinsi Lampung menyelenggarakan pelayanan darah untuk mendukung kebutuhan transfusi di fasilitas kesehatan.",
+    "eyebrow": "",
+    "titleFirst": "",
+    "titleSecond": "",
+    "introduction": "",
     "tag": "PROFIL LEMBAGA",
     "name": "Unit Donor Darah Pembina PMI",
     "location": "Provinsi Lampung",
@@ -250,7 +248,7 @@
     "deferralsNote": "Kriteria ini bersifat umum. Keputusan akhir mengenai kelayakan donor ditetapkan petugas UDD berdasarkan hasil pemeriksaan dan kondisi kesehatan saat itu.",
     "stepsTitle": "Tahapan donor darah",
     "steps": [
-      { "title": "Formulir, kuesioner, dan persetujuan", "description": "Isi formulir identitas dan kuesioner kesehatan secara jujur, lalu tandatangani informed consent." },
+      { "title": "Formulir, kuesioner, dan persetujuan", "description": "Isi formulir identitas dan kuesioner kesehatan secara jujur, lalu tandatangani informed consent digital.", "image": "/media/5a6b7c8d9e0f112233445566.png", "imageAlt": "Pendonor mengisi informed consent digital di meja pelayanan bersama petugas UDD" },
       { "title": "Registrasi pendonor", "description": "Petugas mencatat data pendonor dalam sistem informasi UTD." },
       { "title": "Pemeriksaan dokter", "description": "Dilakukan penimbangan berat badan dan pemeriksaan kesehatan sederhana sesuai prosedur." },
       { "title": "Pemeriksaan hemoglobin dan golongan darah", "description": "Petugas memeriksa hemoglobin dan, sesuai ketentuan, golongan darah." },
