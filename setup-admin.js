@@ -65,12 +65,14 @@ async function main() {
     terminal.close();
   }
   if (!/^[A-Za-z0-9._-]{3,64}$/.test(username)) {
-    throw new Error("Nama pengguna harus 3–64 karakter: huruf, angka, titik, garis bawah, atau tanda hubung.");
+    throw new Error("Nama pengguna harus 3-64 karakter: huruf, angka, titik, garis bawah, atau tanda hubung.");
   }
 
   const password = await readHidden("Kata sandi (min. 14 karakter, tidak ditampilkan): ");
   const confirmation = await readHidden("Ulangi kata sandi: ");
-  if (password.length < 14) throw new Error("Kata sandi harus terdiri dari sedikitnya 14 karakter.");
+  if (password.length < 14 || password.length > 1024) throw new Error("Kata sandi harus 14-1024 karakter.");
+  if (!/\S/.test(password)) throw new Error("Kata sandi tidak boleh hanya berisi spasi.");
+  if (new Set(password).size < 8) throw new Error("Gunakan minimal 8 karakter berbeda.");
   if (password !== confirmation) throw new Error("Kata sandi tidak sama.");
 
   await fs.mkdir(PRIVATE_DIR, { recursive: true, mode: 0o700 });

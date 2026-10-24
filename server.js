@@ -2,13 +2,17 @@
 
 const http = require("node:http");
 const fs = require("node:fs/promises");
+const fsSync = require("node:fs");
 const path = require("node:path");
 const crypto = require("node:crypto");
+const zlib = require("node:zlib");
 const { promisify } = require("node:util");
 
 const scrypt = promisify(crypto.scrypt);
 const ROOT = __dirname;
 const CONTENT_FILE = path.join(ROOT, "content.json");
+const BACKUP_DIR = path.join(ROOT, "backups");
+const BACKUP_LIMIT = 20;
 const PRIVATE_DIR = path.join(ROOT, "private");
 const CREDENTIALS_FILE = path.join(PRIVATE_DIR, "admin-credentials.json");
 const MEDIA_DIR = path.join(ROOT, "media");
@@ -29,6 +33,9 @@ const STATIC_FILES = new Map([
   ["/index.html", ["index.html", "text/html; charset=utf-8"]],
   ["/styles.css", ["styles.css", "text/css; charset=utf-8"]],
   ["/script.js", ["script.js", "text/javascript; charset=utf-8"]],
+  ["/halaman.html", ["halaman.html", "text/html; charset=utf-8"]],
+  ["/halaman.css", ["halaman.css", "text/css; charset=utf-8"]],
+  ["/halaman.js", ["halaman.js", "text/javascript; charset=utf-8"]],
   ["/admin.css", ["admin.css", "text/css; charset=utf-8"]],
   ["/admin.js", ["admin.js", "text/javascript; charset=utf-8"]],
   ["/admin/setup", ["admin-setup.html", "text/html; charset=utf-8"]],
@@ -37,7 +44,11 @@ const STATIC_FILES = new Map([
   ["/admin/login.html", ["admin-login.html", "text/html; charset=utf-8"]],
   ["/robots.txt", ["robots.txt", "text/plain; charset=utf-8"]],
   ["/sitemap.xml", ["sitemap.xml", "application/xml; charset=utf-8"]],
-  ["/assets/pmi-official-favicon.png", [path.join("assets", "pmi-official-favicon.png"), "image/png"]]
+  ["/assets/pmi-official-favicon.png", [path.join("assets", "pmi-official-favicon.png"), "image/png"]],
+  ["/assets/favicon-32.png", [path.join("assets", "favicon-32.png"), "image/png"]],
+  ["/assets/icon-192.png", [path.join("assets", "icon-192.png"), "image/png"]],
+  ["/assets/apple-touch-icon.png", [path.join("assets", "apple-touch-icon.png"), "image/png"]],
+  ["/favicon.ico", [path.join("assets", "favicon-32.png"), "image/png"]]
 ]);
 
 function securityHeaders(res) {
@@ -46,17 +57,51 @@ function securityHeaders(res) {
   res.setHeader("X-Frame-Options", "SAMEORIGIN");
   res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
   res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'");
-  res.setHeader("Cache-Control", "no-store");
 }
 
-function send(res, status, body, contentType = "text/plain; charset=utf-8", extraHeaders = {}) {
+function isCompressible(contentType) {
+  return /^text\//i.test(contentType) || /^application\/(?:json|xml|javascript|ld\+json)/i.test(contentType);
+}
+
+function clientAcceptsGzip(res) {
+  const encoding = String((res.req && res.req.headers["accept-encoding"]) || "");
+  return /\bgzip\b/i.test(encoding);
+}
+
+function send(res, status, body, contentType = "text/plain; charset=utf-8", extraHeaders = {}, cacheControl = "no-store") {
   securityHeaders(res);
-  res.writeHead(status, { "Content-Type": contentType, ...extraHeaders });
-  res.end(body);
+  let payload = Buffer.isBuffer(body) ? body : Buffer.from(String(body));
+  const headers = { "Content-Type": contentType, "Cache-Control": cacheControl, ...extraHeaders };
+  const ifNoneMatch = res.req && res.req.headers["if-none-match"];
+  if (headers.ETag && ifNoneMatch === headers.ETag) {
+    res.writeHead(304, headers);
+    res.end();
+    return;
+  }
+  if (payload.length > 1024 && isCompressible(contentType) && clientAcceptsGzip(res)) {
+    payload = zlib.gzipSync(payload, { level: 6 });
+    headers["Content-Encoding"] = "gzip";
+    headers.Vary = headers.Vary ? `${headers.Vary}, Accept-Encoding` : "Accept-Encoding";
+  }
+  headers["Content-Length"] = payload.length;
+  res.writeHead(status, headers);
+  res.end(payload);
 }
 
-function sendJson(res, status, payload, extraHeaders = {}) {
-  send(res, status, JSON.stringify(payload), "application/json; charset=utf-8", extraHeaders);
+function sendJson(res, status, payload, extraHeaders = {}, cacheControl = "no-store") {
+  send(res, status, JSON.stringify(payload), "application/json; charset=utf-8", extraHeaders, cacheControl);
+}
+
+function contentVersion(json) {
+  return crypto.createHash("sha256").update(json).digest("hex").slice(0, 16);
+}
+
+function credentialStamp() {
+  try {
+    return fsSync.statSync(CREDENTIALS_FILE).mtimeMs;
+  } catch {
+    return 0;
+  }
 }
 
 function safeEqual(left, right) {
@@ -79,7 +124,7 @@ function getSession(req) {
   const token = requestCookie(req, "udd_admin");
   const session = sessions.get(token);
   if (!session) return null;
-  if (session.expiresAt <= Date.now()) {
+  if (session.expiresAt <= Date.now() || session.credentialStamp !== credentialStamp()) {
     sessions.delete(token);
     return null;
   }
@@ -133,6 +178,7 @@ function validateHref(value) {
   if (typeof value !== "string" || value.length > 2048) return false;
   if (value === "") return true;
   return /^#[\w-]*$/.test(value) ||
+    /^halaman\.html\?page=[a-z-]+$/i.test(value) ||
     /^https:\/\/[^\s]+$/i.test(value) ||
     /^tel:\+?[\d\s().-]{3,}$/.test(value) ||
     /^mailto:[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -184,20 +230,42 @@ function validateContent(content) {
   return reason;
 }
 
-async function loadContent() {
-  return JSON.parse(await fs.readFile(CONTENT_FILE, "utf8"));
+async function backupContent() {
+  await fs.mkdir(BACKUP_DIR, { recursive: true, mode: 0o700 });
+  try {
+    const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+    await fs.copyFile(CONTENT_FILE, path.join(BACKUP_DIR, `content-${stamp}.json`));
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+  let entries = [];
+  try {
+    entries = await fs.readdir(BACKUP_DIR);
+  } catch {
+    return;
+  }
+  const backups = entries.filter((name) => /^content-.*\.json$/.test(name)).sort();
+  const excess = backups.length - BACKUP_LIMIT;
+  for (let index = 0; index < excess; index += 1) {
+    await fs.unlink(path.join(BACKUP_DIR, backups[index])).catch(() => {});
+  }
 }
 
 async function saveContent(content) {
   const json = `${JSON.stringify(content, null, 2)}\n`;
-  try {
-    await fs.copyFile(CONTENT_FILE, `${CONTENT_FILE}.bak`);
-  } catch (error) {
-    if (error.code !== "ENOENT") throw error;
-  }
+  await backupContent();
   const temporaryFile = `${CONTENT_FILE}.${process.pid}.tmp`;
   await fs.writeFile(temporaryFile, json, { encoding: "utf8", mode: 0o644 });
   await fs.rename(temporaryFile, CONTENT_FILE);
+  return json;
+}
+
+function passwordProblem(password) {
+  if (typeof password !== "string") return "Kata sandi tidak valid.";
+  if (password.length < 14 || password.length > 1024) return "Gunakan kata sandi baru dengan panjang 14–1024 karakter.";
+  if (!/\S/.test(password)) return "Kata sandi tidak boleh hanya berisi spasi.";
+  if (new Set(password).size < 8) return "Gunakan kata sandi dengan minimal 8 karakter berbeda.";
+  return "";
 }
 
 function checkCsrf(req, session) {
@@ -212,13 +280,23 @@ function attemptsFor(ip) {
   return attempts;
 }
 
-async function sendStatic(res, filename, contentType) {
+async function sendStatic(res, filename, contentType, cacheControl = "no-cache") {
   try {
     const body = await fs.readFile(path.join(ROOT, filename));
-    send(res, 200, body, contentType);
+    const etag = `"${crypto.createHash("sha1").update(body).digest("base64url")}"`;
+    send(res, 200, body, contentType, { ETag: etag }, cacheControl);
   } catch (error) {
-    if (error.code === "ENOENT") send(res, 404, "Tidak ditemukan.");
+    if (error.code === "ENOENT") sendNotFound(res);
     else throw error;
+  }
+}
+
+async function sendNotFound(res) {
+  try {
+    const body = await fs.readFile(path.join(ROOT, "404.html"));
+    send(res, 404, body, "text/html; charset=utf-8");
+  } catch {
+    send(res, 404, "Tidak ditemukan.");
   }
 }
 
@@ -253,7 +331,7 @@ async function saveCredentials(username, password) {
 function createSession(res) {
   const token = crypto.randomBytes(32).toString("base64url");
   const csrfToken = crypto.randomBytes(32).toString("base64url");
-  sessions.set(token, { csrfToken, expiresAt: Date.now() + SESSION_TTL_MS });
+  sessions.set(token, { csrfToken, expiresAt: Date.now() + SESSION_TTL_MS, credentialStamp: credentialStamp() });
   return { csrfToken, cookie: sessionCookie(token) };
 }
 
@@ -269,7 +347,7 @@ async function handleRequest(req, res) {
       });
       return;
     }
-    await sendStatic(res, "admin.html", "text/html; charset=utf-8");
+    await sendStatic(res, "admin.html", "text/html; charset=utf-8", "no-store");
     return;
   }
 
@@ -288,7 +366,9 @@ async function handleRequest(req, res) {
 
   if (req.method === "GET" && pathname === "/api/content") {
     try {
-      sendJson(res, 200, await loadContent());
+      const raw = await fs.readFile(CONTENT_FILE, "utf8");
+      JSON.parse(raw);
+      send(res, 200, raw, "application/json; charset=utf-8", { ETag: `"${contentVersion(raw)}"` }, "no-cache");
     } catch (error) {
       console.error("Gagal membaca konten publik:", error.message);
       sendJson(res, 500, { error: "Konten situs belum dapat dimuat." });
@@ -367,8 +447,9 @@ async function handleRequest(req, res) {
       sendJson(res, 400, { error: "Nama pengguna harus 3–64 karakter: huruf, angka, titik, garis bawah, atau tanda hubung." });
       return;
     }
-    if (password.length < 14 || password.length > 1024) {
-      sendJson(res, 400, { error: "Gunakan kata sandi baru dengan panjang 14–1024 karakter." });
+    const passwordIssue = passwordProblem(password);
+    if (passwordIssue) {
+      sendJson(res, 400, { error: passwordIssue });
       return;
     }
     try {
@@ -397,7 +478,8 @@ async function handleRequest(req, res) {
       return;
     }
     try {
-      sendJson(res, 200, { content: await loadContent(), csrfToken: session.csrfToken });
+      const raw = await fs.readFile(CONTENT_FILE, "utf8");
+      sendJson(res, 200, { content: JSON.parse(raw), csrfToken: session.csrfToken, version: contentVersion(raw) });
     } catch (error) {
       console.error("Gagal membaca konten CMS:", error.message);
       sendJson(res, 500, { error: "Konten tidak dapat dibaca." });
@@ -416,13 +498,27 @@ async function handleRequest(req, res) {
     }
     try {
       const body = await readJsonBody(req);
+      const currentRaw = await fs.readFile(CONTENT_FILE, "utf8");
+      const currentVersion = contentVersion(currentRaw);
+      if (typeof body.version !== "string" || body.version !== currentVersion) {
+        sendJson(res, 409, {
+          error: "Konten sudah diperbarui di tab atau proses lain. Editor dimuat ulang; ulangi perubahan Anda lalu simpan kembali.",
+          version: currentVersion
+        });
+        return;
+      }
       const reason = validateContent(body.content);
       if (reason) {
         sendJson(res, 400, { error: reason });
         return;
       }
-      await saveContent(body.content);
-      sendJson(res, 200, { ok: true, content: body.content, savedAt: new Date().toISOString() });
+      const savedJson = await saveContent(body.content);
+      sendJson(res, 200, {
+        ok: true,
+        content: body.content,
+        savedAt: new Date().toISOString(),
+        version: contentVersion(savedJson)
+      });
     } catch (error) {
       console.error("Gagal menyimpan konten:", error.message);
       sendJson(res, error.status || 500, { error: error.status ? error.message : "Gagal menyimpan konten. File lama tetap dipertahankan." });
@@ -485,19 +581,29 @@ async function handleRequest(req, res) {
     }
     const extension = path.extname(match[1]);
     const types = { ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp" };
-    await sendStatic(res, path.join("media", match[1]), types[extension]);
+    await sendStatic(res, path.join("media", match[1]), types[extension], "public, max-age=31536000, immutable");
     return;
   }
 
   const staticFile = STATIC_FILES.get(pathname);
   if (req.method === "GET" && staticFile) {
-    await sendStatic(res, staticFile[0], staticFile[1]);
+    const filename = staticFile[0];
+    const cacheControl = filename.startsWith("admin")
+      ? "no-store"
+      : /\.(?:png|jpg|jpeg|webp|ico)$/i.test(filename)
+        ? "public, max-age=31536000, immutable"
+        : "no-cache";
+    await sendStatic(res, filename, staticFile[1], cacheControl);
     return;
   }
 
   if (req.method === "GET" && pathname === "/admin/") {
-    res.writeHead(301, { Location: "/admin" });
-    res.end();
+    send(res, 301, "", "text/plain; charset=utf-8", { Location: "/admin" });
+    return;
+  }
+
+  if (req.method === "GET" && String(req.headers.accept || "").includes("text/html")) {
+    await sendNotFound(res);
     return;
   }
 

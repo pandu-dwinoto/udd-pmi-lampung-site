@@ -6,12 +6,16 @@
     "themeColor": "#f8f5ef",
     "ogTitle": "UDD Pembina PMI Provinsi Lampung",
     "ogDescription": "Informasi lokasi, layanan donor darah, kontak Humas, dan kanal resmi UDD Pembina PMI Provinsi Lampung.",
-    "ogImage": "/media/316b0450fc7e946075cb9e70.jpg"
+    "ogImage": "/media/d4e5f6a7b8c9d0e1f2a3b4c5.jpg"
   },
   "media": {
     "logo": "/assets/pmi-official-favicon.png",
-    "heroImage": "/media/7feec85c323f6d29f4b89b56.jpg",
-    "heroImageAlt": "dr. Zam Zanariah Ibrahim mengenakan jas dokter"
+    "heroImage": "/media/0a1b2c3d4e5f60718293a4b5.png",
+    "heroImageAlt": "Pendonor darah didampingi tenaga kesehatan di ruang donor yang terang dan nyaman",
+    "profileImage": "/media/1a2b3c4d5e6f708192a3b4c5.png",
+    "profileImageAlt": "Ilustrasi suasana pelayanan dan konsultasi di UDD",
+    "leadershipImage": "/media/7feec85c323f6d29f4b89b56.jpg",
+    "leadershipImageAlt": "dr. Zam Zanariah Ibrahim, Plt. Kepala UDD Pembina"
   },
   "brand": {
     "shortName": "UDD Pembina PMI",
@@ -20,56 +24,56 @@
   },
   "navigation": [
     {
-      "label": "Profil",
-      "href": "#profil"
+      "label": "Tentang UDD",
+      "href": "halaman.html?page=tentang-udd"
     },
     {
       "label": "Donor Darah",
-      "href": "#donor"
+      "href": "halaman.html?page=donor"
     },
     {
       "label": "Butuh Darah",
-      "href": "#permintaan-darah"
+      "href": "halaman.html?page=permintaan-darah"
     },
     {
       "label": "SaiDonor",
-      "href": "#saidonor"
+      "href": "halaman.html?page=layanan"
     },
     {
-      "label": "Kabar",
-      "href": "#informasi"
+      "label": "Kabar & Kegiatan",
+      "href": "halaman.html?page=berita"
     },
     {
       "label": "FAQ",
-      "href": "#faq"
+      "href": "halaman.html?page=faq"
     },
     {
       "label": "Kontak UDD",
-      "href": "#kontak",
+      "href": "halaman.html?page=kontak",
       "cta": true,
       "suffix": "↗"
     }
   ],
   "hero": {
     "eyebrow": "UNIT DONOR DARAH PMI",
-    "titleFirst": "Satu kepedulian,",
-    "titleSecond": "banyak harapan.",
-    "description": "Informasi lokasi UDD, donor darah, dan kanal resmi UDD Pembina PMI Provinsi Lampung.",
+    "titleFirst": "Setetes darah,",
+    "titleSecond": "sejuta harapan.",
+    "description": "Dapatkan informasi donor darah, lokasi UDD, dan layanan resmi UDD Pembina PMI Provinsi Lampung.",
     "primaryAction": {
-      "label": "Informasi donor darah",
-      "href": "#donor",
+      "label": "Saya ingin donor",
+      "href": "#panduan",
       "suffix": "→"
     },
     "secondaryAction": {
-      "label": "Informasi layanan",
+      "label": "Saya membutuhkan darah",
       "href": "#permintaan-darah",
       "suffix": "→"
     },
-    "note": "Situs PMI Lampung mencantumkan UDD buka 24 jam dan gerai donor Jumat pukul 10.00 sampai 15.00 WIB. Konfirmasikan sebelum berkunjung.",
-    "artDescription": "Ilustrasi tetes darah dan kepedulian",
-    "artLabel": "Donor\ndarah",
-    "artCaptionTitle": "dr. Zam Zanariah Ibrahim",
-    "artCaptionDescription": "Plt. Kepala UDD Pembina PMI Provinsi Lampung",
+    "note": "Layanan permintaan darah tersedia 24 jam setiap hari. Pelayanan donor darah tersedia setiap hari pukul 07.30–21.00 WIB.",
+    "artDescription": "Suasana donor darah yang aman dan nyaman",
+    "artLabel": "",
+    "artCaptionTitle": "",
+    "artCaptionDescription": "",
     "artIndex": "",
     "artLocation": "",
     "footerLabel": "UNIT DONOR DARAH PEMBINA",
@@ -77,20 +81,19 @@
   },
   "quickAccess": {
     "eyebrow": "AKSES CEPAT",
-    "title": "Apa yang Anda cari?",
-    "introduction": "Pilih informasi lokasi, kontak, dan aplikasi UDD yang Anda perlukan.",
+    "title": "Temukan layanan yang Anda butuhkan.",
     "items": [
       {
         "icon": "donor",
         "title": "Informasi donor darah",
-        "description": "Syarat dan panduan donor perlu konfirmasi langsung dari UDD",
+        "description": "Persiapan, alur donor, dan jam pelayanan donor darah.",
         "href": "#donor",
         "external": false
       },
       {
         "icon": "request",
         "title": "Informasi permintaan darah",
-        "description": "Prosedur layanan perlu dikonfirmasi ke fasilitas kesehatan dan UDD",
+        "description": "Alur permintaan, komponen darah, dan BPPD.",
         "href": "#permintaan-darah",
         "external": false
       },
@@ -104,35 +107,43 @@
       {
         "icon": "whatsapp",
         "title": "WhatsApp Humas UDD",
-        "description": "Kanal Humas yang tercantum pada profil resmi UDD",
+        "description": "Hubungi Humas UDD melalui WhatsApp resmi.",
         "href": "https://wa.me/628117903020",
         "external": true
       }
     ]
   },
   "notice": {
-    "title": "Informasi layanan",
-    "description": "Persyaratan donor serta prosedur dan ketersediaan darah belum dikonfirmasi untuk ditampilkan di situs ini. Mohon tanyakan informasi terkini melalui kanal resmi UDD.",
-    "linkLabel": "Lihat informasi kontak",
+    "title": "Layanan 24 jam",
+    "description": "Pelayanan permintaan darah tersedia 24 jam setiap hari. Untuk donor darah, kunjungi UDD Pembina setiap hari pukul 07.30–21.00 WIB. Untuk ketersediaan golongan atau komponen darah tertentu, hubungi WhatsApp Humas UDD atau periksa aplikasi SaiDonor.",
+    "linkLabel": "Hubungi UDD",
     "linkHref": "#kontak",
     "linkSuffix": "\u2192"
   },
   "profile": {
     "eyebrow": "01 / MENGENAL UDD",
-    "titleFirst": "Melayani kebutuhan darah,",
+    "titleFirst": "Melayani kebutuhan darah",
     "titleSecond": "untuk masyarakat Lampung.",
     "introduction": "Unit Donor Darah (UDD) Pembina adalah unit pelayanan darah Palang Merah Indonesia Provinsi Lampung.",
     "tag": "PROFIL LEMBAGA",
     "name": "Unit Donor Darah Pembina PMI",
     "location": "Provinsi Lampung",
-    "description": "UDD Pembina PMI Provinsi Lampung merupakan unit donor darah di Provinsi Lampung. Rincian fungsi dan prosedur operasional perlu dikonfirmasi kepada UDD.",
-    "confirmation": "Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung. Jam buka 24 jam menurut situs PMI Lampung.",
+    "description": "UDD Pembina PMI Provinsi Lampung melayani pengambilan, pengolahan, dan penyediaan darah bagi fasilitas kesehatan di Provinsi Lampung. Permintaan darah dilayani 24 jam setiap hari, sedangkan donor darah dilayani pukul 07.30–21.00 WIB.",
+    "confirmation": "Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung · permintaan darah 24 jam · donor 07.30–21.00 WIB",
     "sideNumber": "01",
     "sideLabel": "TENTANG\nLEMBAGA",
     "functionsTitle": "Lingkup layanan",
-    "functions": [],
+    "functions": [
+      "Pelayanan donor darah dan pendataan pendonor di UDD Pembina.",
+      "Penyediaan darah lengkap serta pengolahan komponen darah, seperti sel darah merah pekat, trombosit, dan plasma beku segar.",
+      "Penyediaan darah dan pemeriksaan pratransfusi, termasuk uji silang serasi (crossmatch) sesuai jenis komponen dan ketentuan pemeriksaan.",
+      "Dukungan kegiatan donor di luar gedung melalui Mobile Unit."
+    ],
     "leadershipTitle": "Pimpinan",
-    "leadership": [],
+    "leadership": [
+      { "role": "Ketua Pengurus PMI Provinsi Lampung", "name": "Purnama Wulan Sari Mirza (2025–2030)" },
+      { "role": "Plt. Kepala UDD Pembina", "name": "dr. Zam Zanariah Ibrahim, Sp.S." }
+    ],
     "legalTitle": "Dasar penyelenggaraan",
     "legalBasis": [
       "UU No. 1 Tahun 2018 tentang Kepalangmerahan",
@@ -144,7 +155,7 @@
   "gallery": {
     "eyebrow": "DOKUMENTASI UDD",
     "title": "Wajah di balik layanan.",
-    "introduction": "",
+    "introduction": "Dokumentasi kegiatan dan pesan edukasi dari kanal resmi UDD Pembina.",
     "items": [
       {
         "image": "/media/316b0450fc7e946075cb9e70.jpg",
@@ -167,16 +178,15 @@
     ]
   },
   "services": {
-    "eyebrow": "02 / LAYANAN",
-    "titleFirst": "Informasi donor",
-    "titleSecond": "dan layanan UDD.",
-    "introduction": "Pilih layanan sesuai kebutuhan Anda.",
+    "eyebrow": "02 / LAYANAN UDD",
+    "titleFirst": "Donor darah dan",
+    "titleSecond": "kebutuhan transfusi.",
     "items": [
       {
         "number": "01",
         "icon": "donor",
         "title": "Donor darah",
-        "description": "Situs PMI Lampung mencantumkan UDD Pembina buka 24 jam serta gerai donor di Markas PMI setiap Jumat, pukul 10.00 sampai 15.00 WIB. Konfirmasikan sebelum datang.",
+        "description": "Donor darah dilayani setiap hari pukul 07.30–21.00 WIB di UDD Pembina PMI Provinsi Lampung.",
         "linkLabel": "Informasi resmi PMI Lampung",
         "href": "https://www.pmilampung.or.id/donor-darah",
         "external": true,
@@ -186,7 +196,7 @@
         "number": "02",
         "icon": "request",
         "title": "Permintaan darah",
-        "description": "Prosedur, ketersediaan, dan biaya layanan belum dikonfirmasi UDD; situs ini tidak memuat petunjuk yang belum disahkan.",
+        "description": "Permintaan diajukan melalui fasilitas kesehatan berdasarkan kebutuhan yang ditetapkan dokter. Petugas memeriksa kelengkapan permintaan, ketersediaan darah, dan persyaratan pratransfusi.",
         "linkLabel": "Informasi kontak",
         "href": "#permintaan-darah",
         "external": false,
@@ -195,8 +205,10 @@
       {
         "number": "03",
         "icon": "app",
-        "title": "Mobile Unit",
-        "description": "Fitur agenda Mobile Unit tercantum pada Google Play SaiDonor. Periksa kanal UDD untuk informasi yang tersedia dan terbaru.",
+        "title": "Donor di luar gedung",
+        "description": "Temukan agenda kegiatan donor melalui fitur Mobile Unit di SaiDonor. Konfirmasikan jadwal dan lokasi kepada penyelenggara sebelum berkunjung.",
+        "image": "/media/2b3c4d5e6f708192a3b4c5d6.png",
+        "imageAlt": "Ilustrasi kegiatan donor melalui Mobile Unit",
         "linkLabel": "Lihat aplikasi SaiDonor",
         "href": "https://play.google.com/store/apps/details?id=id.pmilampung.saidonor&hl=id",
         "external": true,
@@ -205,12 +217,65 @@
     ]
   },
   "donor": {
-    "eyebrow": "03 / DONOR DARAH",
-    "titleFirst": "Informasi donor",
-    "titleSecond": "perlu konfirmasi.",
-    "introduction": "Persyaratan dan panduan donor darah dapat berubah; kelayakan ditentukan oleh petugas UDD.",
-    "confirmationTitle": "Persyaratan resmi belum dikonfirmasi",
-    "confirmationNote": "Syarat, penundaan donor, dan panduan kesehatan tidak dicantumkan karena materi donor yang tersedia belum dapat dipastikan sebagai kebijakan UDD terkini. Tanyakan langsung kepada petugas melalui kanal resmi.",
+    "eyebrow": "03 / LAYANAN DONOR DARAH",
+    "titleFirst": "Sebelum donor,",
+    "titleSecond": "siapkan diri Anda.",
+    "educationTitle": "Memahami donor dengan lebih tenang",
+    "education": [
+      { "title": "Donor dilakukan secara sukarela", "description": "Sebelum memberi persetujuan, Anda perlu memperoleh penjelasan tentang proses donor, manfaat, risiko, dan pemeriksaan darah. Ajukan pertanyaan jika ada yang belum jelas. Anda dapat membatalkan atau mengundurkan diri dari proses donor." },
+      { "title": "Informasi kesehatan bersifat rahasia", "description": "Riwayat kesehatan dan jawaban kuesioner digunakan dalam penilaian kelayakan donor. Penilaian dilakukan secara rahasia. Sampaikan informasi secara lengkap kepada petugas, termasuk hal yang mungkin memengaruhi keselamatan penerima darah." },
+      { "title": "Darah menjalani pemeriksaan", "description": "Standar pelayanan mencakup pemeriksaan golongan darah serta uji saring infeksi menular lewat transfusi darah (IMLTD). Uji saring minimal meliputi petanda hepatitis B, hepatitis C, HIV, dan sifilis." },
+      { "title": "Hasil reaktif perlu ditindaklanjuti", "description": "Hasil uji saring reaktif berulang tidak menetapkan diagnosis penyakit. Darah tersebut tidak digunakan untuk transfusi. Pendonor perlu mendapat konseling dan rujukan untuk pemeriksaan diagnostik sesuai ketentuan." }
+    ],
+    "educationSource": "Rujukan: Lampiran Permenkes No. 91 Tahun 2015, informasi pendonor, seleksi donor, uji saring IMLTD, dan konseling pendonor.",
+    "requirementsTitle": "Persiapan sebelum donor",
+    "requirements": [
+      { "label": "Identitas diri", "value": "Bawa KTP, SIM, atau paspor. Jika pernah donor, bawa kartu donor." },
+      { "label": "Kondisi tubuh", "value": "Tidur cukup dan makan sebelum donor. Jangan datang dengan perut kosong." },
+      { "label": "Cairan", "value": "Cukupi minum dan ikuti arahan petugas." },
+      { "label": "Waktu", "value": "Sisihkan waktu untuk pemeriksaan, pengambilan darah, dan istirahat." }
+    ],
+    "deferralsTitle": "Pemeriksaan kelayakan",
+    "deferrals": [
+      { "label": "Usia", "text": "Minimal 17 tahun. Pendonor pertama di atas 60 tahun atau pendonor ulang di atas 65 tahun memerlukan pertimbangan medis khusus." },
+      { "label": "Berat badan", "text": "Darah lengkap 350 mL: minimal 45 kg. Darah lengkap 450 mL: minimal 55 kg. Volume ditetapkan petugas." },
+      { "label": "Hemoglobin", "text": "12,5–17 g/dL. Hasil diperiksa sebelum petugas menentukan kelayakan donor." },
+      { "label": "Pemeriksaan fisik", "text": "Tekanan darah, denyut nadi, dan suhu tubuh harus berada dalam rentang yang dipersyaratkan." },
+      { "label": "Riwayat kesehatan", "text": "Sampaikan dengan jujur kondisi kesehatan, obat, tindakan medis, perjalanan, dan risiko infeksi. Penilaian dilakukan secara rahasia." }
+    ],
+    "deferralsNote": "Kriteria ini bersifat umum. Keputusan akhir mengenai kelayakan donor ditetapkan petugas UDD berdasarkan hasil pemeriksaan dan kondisi kesehatan saat itu.",
+    "stepsTitle": "Tahapan donor darah",
+    "steps": [
+      { "title": "Formulir, kuesioner, dan persetujuan", "description": "Isi formulir identitas dan kuesioner kesehatan secara jujur, lalu tandatangani informed consent." },
+      { "title": "Registrasi pendonor", "description": "Petugas mencatat data pendonor dalam sistem informasi UTD." },
+      { "title": "Pemeriksaan dokter", "description": "Dilakukan penimbangan berat badan dan pemeriksaan kesehatan sederhana sesuai prosedur." },
+      { "title": "Pemeriksaan hemoglobin dan golongan darah", "description": "Petugas memeriksa hemoglobin dan, sesuai ketentuan, golongan darah." },
+      { "title": "Pengambilan darah", "description": "Jika dinyatakan layak, pengambilan darah dilakukan oleh petugas sesuai prosedur." },
+      { "title": "Pemulihan setelah donor", "description": "Beristirahat sejenak dan ikuti arahan petugas sebelum pulang." }
+    ],
+    "tips": [
+      {
+        "title": "Perawatan setelah donor",
+        "items": [
+          "Minum dan konsumsi makanan ringan setelah donor.",
+          "Beristirahat di area donor sampai merasa siap untuk pulang.",
+          "Jika merasa pusing atau tidak nyaman, duduk atau berbaring dan segera beri tahu petugas.",
+          "Beri tahu UDD sesegera mungkin jika muncul reaksi setelah donor atau ada informasi kesehatan tambahan."
+        ]
+      },
+      {
+        "title": "Hal penting untuk diingat",
+        "items": [
+          "Jarak donor berikutnya mengikuti ketentuan dan arahan petugas UDD.",
+          "SaiDonor dapat membantu mengingat jadwal, tetapi tidak menggantikan pemeriksaan kelayakan donor.",
+          "Jika hasil uji saring memerlukan tindak lanjut, ikuti konseling dan rujukan dari UDD."
+        ]
+      }
+    ],
+    "scheduleTitle": "Jam dan lokasi layanan",
+    "schedule": [
+      { "place": "UDD Pembina PMI Provinsi Lampung", "detail": "Permintaan darah 24 jam setiap hari · donor darah setiap hari pukul 07.30–21.00 WIB · Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung", "hours": "Permintaan darah 24 jam setiap hari. Donor darah setiap hari pukul 07.30–21.00 WIB.", "address": "Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung" }
+    ],
     "actions": [
       {
         "label": "WhatsApp Humas UDD",
@@ -223,24 +288,62 @@
         "href": "https://www.pmilampung.or.id/donor-darah",
         "external": true,
         "suffix": "\u2197"
+      },
+      {
+        "label": "Rujukan: Permenkes 91/2015 (PDF)",
+        "href": "https://jdih.kemkes.go.id/storage/documents/pdfs/2015permenkes091.pdf",
+        "external": true,
+        "suffix": "\u2197"
       }
     ]
   },
   "bloodRequest": {
     "eyebrow": "04 / PERMINTAAN DARAH",
-    "titleFirst": "Informasi permintaan",
-    "titleSecond": "darah perlu konfirmasi.",
-    "introduction": "Prosedur layanan, ketersediaan komponen darah, dan biaya perlu dikonfirmasi kepada pihak yang berwenang.",
-    "confirmationTitle": "Prosedur layanan belum dikonfirmasi",
-    "confirmationNote": "Situs ini belum menampilkan langkah permintaan darah, ketersediaan stok, informasi BPPD, atau nomor telepon langsung UDD karena belum terverifikasi. Untuk kebutuhan pasien, mintalah arahan dari fasilitas kesehatan yang merawat. WhatsApp berikut adalah kanal Humas yang tercantum di profil UDD dan belum dikonfirmasi sebagai hotline permintaan darah atau keadaan darurat.",
-    "actions": [
+    "titleFirst": "Permintaan darah",
+    "titleSecond": "dari pengajuan hingga penyerahan.",
+    "introduction": "",
+    "stepsTitle": "Alur permintaan darah untuk transfusi",
+    "steps": [
+      { "title": "Penilaian medis di fasilitas kesehatan", "description": "Pasien diperiksa di fasilitas kesehatan atau rumah sakit. Dokter menentukan indikasi transfusi dan komponen darah yang diperlukan.", "image": "/media/a1b2c3d4e5f60718293a4b5c.png", "imageAlt": "Dokter berkonsultasi dengan pasien di fasilitas kesehatan" },
+      { "title": "Instruksi permintaan darah", "description": "Dokter Penanggung Jawab Pelayanan mengisi dan menandatangani formulir permintaan, disertai sampel darah pasien.", "image": "/media/b2c3d4e5f60718293a4b5c6d.png", "imageAlt": "Petugas mengisi formulir permintaan darah dan menyiapkan sampel pasien" },
+      { "title": "Penerimaan dan verifikasi", "description": "Petugas BDRS memeriksa identitas pasien pada formulir dan label sampel, kondisi sampel, serta kelengkapan permintaan.", "image": "/media/c3d4e5f60718293a4b5c6d7e.png", "imageAlt": "Petugas laboratorium memverifikasi sampel darah pasien" },
+      { "title": "Pemeriksaan pratransfusi", "description": "Dilakukan pemeriksaan golongan darah dan uji silang serasi sesuai komponen darah yang diminta.", "image": "/media/d4e5f60718293a4b5c6d7e8f.png", "imageAlt": "Petugas laboratorium melakukan pemeriksaan pratransfusi" },
+      { "title": "Penyiapan komponen darah", "description": "Komponen yang sesuai dan kompatibel disiapkan berdasarkan hasil pemeriksaan serta ketersediaan.", "image": "/media/e5f60718293a4b5c6d7e8f9a.png", "imageAlt": "Petugas menyiapkan komponen darah dalam penyimpanan terkendali" },
+      { "title": "Penyerahan untuk transfusi", "description": "Komponen darah diserahkan kepada fasilitas kesehatan sesuai prosedur identifikasi, dokumentasi, dan pengiriman.", "image": "/media/f60718293a4b5c6d7e8f9a0b.png", "imageAlt": "Petugas menyerahkan wadah transport komponen darah kepada tenaga kesehatan" }
+    ],
+    "urgentTitle": "Hubungi kanal resmi UDD",
+    "urgentDescription": "Untuk kebutuhan darah yang mendesak, koordinasikan terlebih dahulu dengan dokter atau fasilitas kesehatan yang merawat pasien. Telepon UDD untuk koordinasi; WhatsApp Humas untuk informasi layanan.",
+    "urgentActions": [
+      {
+        "label": "Telepon UDD",
+        "href": "tel:+62721702147",
+        "suffix": "\u260E",
+        "description": "Untuk informasi dan koordinasi kebutuhan darah."
+      },
       {
         "label": "WhatsApp Humas UDD",
         "href": "https://wa.me/628117903020",
         "external": true,
-        "suffix": "\u2197"
+        "suffix": "\u2197",
+        "description": "Untuk informasi layanan UDD."
       }
-    ]
+    ],
+    "componentsTitle": "Komponen darah",
+    "components": [
+      "Darah lengkap (whole blood/WB): darah yang belum dipisahkan menjadi komponen.",
+      "Sel darah merah pekat (packed red cells/PRC): komponen sel darah merah.",
+      "Konsentrat trombosit (thrombocyte concentrate/TC): komponen trombosit.",
+      "Plasma beku segar (fresh frozen plasma/FFP): plasma yang dibekukan untuk mempertahankan faktor pembekuan."
+    ],
+    "componentsNote": "Jenis, jumlah, dan waktu pemberian transfusi ditetapkan dokter berdasarkan kondisi pasien. Daftar ini bukan panduan memilih komponen secara mandiri. Konfirmasikan ketersediaan kepada UDD.",
+    "bppdTitle": "Biaya pengganti pengolahan darah (BPPD)",
+    "bppdDescription": "BPPD adalah biaya pengolahan darah untuk menghasilkan darah transfusi dan/atau komponennya yang aman sesuai standar, tersedia saat dibutuhkan, serta diperhitungkan secara rasional dan nirlaba.",
+    "bppdPoints": [
+      { "title": "Batas tertinggi BPPD", "description": "Paling banyak Rp490.000 per kantong, sesuai Kepmenkes Nomor HK.01.07/Menkes/504/2024." },
+      { "title": "Peserta JKN", "description": "Pelaksanaan BPPD dalam program JKN mengikuti ketentuan tarif pelayanan JKN yang berlaku." },
+      { "title": "Koordinasi sebelum pelayanan", "description": "Koordinasikan dengan fasilitas kesehatan yang merawat pasien mengenai komponen darah yang diresepkan dokter, pembiayaan, dan penjaminan." }
+    ],
+    "bppdReference": "Rujukan: Permenkes Nomor 92 Tahun 2015 dan Kepmenkes Nomor HK.01.07/Menkes/504/2024."
   },
   "app": {
     "eyebrow": "05 / APLIKASI PMI LAMPUNG",
@@ -291,7 +394,7 @@
     "features": [
       {
         "title": "Informasi stok darah",
-        "description": "Cek ketersediaan golongan A, B, AB, O, dan rhesus secara real-time."
+        "description": "Lihat informasi stok menurut golongan darah dan Rhesus. Ketersediaan untuk pasien tetap perlu dikonfirmasi kepada UDD."
       },
       {
         "title": "Kartu donor digital",
@@ -317,7 +420,7 @@
     "releaseLabel": "CATATAN PEMBARUAN",
     "releaseVersion": "Versi 1.0.2 · diperbarui 9 Oktober 2026",
     "releaseItems": [
-      "Informasi stok darah real-time.",
+      "Informasi stok darah melalui aplikasi; ketersediaan dapat berubah.",
       "Jadwal dan lokasi kegiatan donor.",
       "Berita PMI, edukasi kesehatan, dan informasi kegiatan sukarelawan.",
       "Akses cepat ke telepon dan lokasi Markas/UDD PMI Lampung."
@@ -340,7 +443,7 @@
       }
     ],
     "privacyLabel": "PRIVASI DATA PENDONOR",
-    "privacyIntro": "Bagaimana SaiDonor menggunakan dan melindungi data Anda.",
+    "privacyIntro": "Ringkasan informasi penggunaan data yang dicantumkan pengembang. Baca kebijakan privasi sebelum menggunakan aplikasi.",
     "dataSafetyClaims": [],
     "dataCollected": [],
     "privacyPurposes": [
@@ -348,9 +451,9 @@
       "Mengirim pengingat donor kembali, informasi stok, agenda Mobile Unit, edukasi, dan imbauan kebutuhan darah mendesak."
     ],
     "privacyOtherClaims": [
-      "Komunikasi data terenkripsi (HTTPS). Data tidak dijual dan tidak digunakan untuk iklan.",
-      "Aplikasi tidak mengakses GPS, kontak, galeri foto, maupun mikrofon.",
-      "Pembetulan data dapat diajukan kepada petugas UDD."
+      "Menurut kebijakan pengembang, komunikasi data menggunakan HTTPS; data tidak dijual atau digunakan untuk iklan.",
+      "Pengembang menyatakan aplikasi tidak mengakses GPS, kontak, galeri foto, atau mikrofon.",
+      "Untuk pembetulan data, hubungi petugas UDD. Pernyataan pengembang ini bukan hasil audit keamanan aplikasi oleh situs ini."
     ],
     "privacyPolicyUrl": "https://docs.google.com/document/d/e/2PACX-1vSSzw8drGEL33LNhHKPMzvrPj6Ib7RAGJw7J16Eoxt6EjeAw8iG3VfU2eyZLE_tb-Sz4JPmXiCBofiQ/pub",
     "dataSafetyUrl": "https://play.google.com/store/apps/datasafety?id=id.pmilampung.saidonor&hl=id",
@@ -358,7 +461,7 @@
     "dataSafetyLabel": "Lihat Keamanan Data di Google Play",
     "discrepancyLabel": "",
     "discrepancies": [],
-    "sourceNote": "Fitur SaiDonor dirangkum dari listing Google Play pada 23 Oktober 2026; informasi dapat berubah.",
+    "sourceNote": "Fitur SaiDonor dirangkum dari halaman Google Play pada 23 Oktober 2026. Fitur dan kebijakan dapat berubah; periksa informasi pengembang yang terbaru.",
     "references": [
       {
         "label": "SaiDonor di Google Play",
@@ -381,43 +484,51 @@
     "entries": [
       {
         "date": "5 Oktober 2026",
+        "datetime": "2026-10-05",
         "category": "Edukasi",
         "title": "Kesiapan diri adalah bagian dari kepedulian",
         "summary": "Pesan UDD Pembina tentang persiapan diri sebelum berdonor darah.",
         "href": "https://www.instagram.com/uddpmiprovinsilampung/reel/DeIw9dtTBtc/",
-        "linkLabel": "Lihat di Instagram",
+        "source": "Instagram UDD Pembina",
+        "linkLabel": "Buka unggahan",
         "external": true
       },
       {
         "date": "6 Mei 2026",
+        "datetime": "2026-05-06",
         "category": "Kegiatan",
         "title": "Bakti sosial donor darah DKD Lampung bersama UDD Pembina",
         "summary": "Dewan Kerja Daerah Pramuka Lampung menggelar bakti sosial donor darah bersama Plt. Kepala UDD PMI Provinsi Lampung.",
         "href": "https://www.sinarlampung.co/2026/05/06/wujudkan-kepedulian-kemanusiaan-dkd-lampung-gelar-bakti-sosial-donor-darah-bersama-plt-ketua-udd-pmi-provinsi-lampung/",
-        "linkLabel": "Baca berita",
+        "source": "Sinar Lampung",
+        "linkLabel": "Baca liputan",
         "external": true
       },
       {
         "date": "Maret 2026",
+        "datetime": "2026-03",
         "category": "Kelembagaan",
         "title": "dr. Zam Zanariah ditunjuk sebagai Plt. Kepala UDD",
         "summary": "PMI Provinsi Lampung menunjuk dr. Zam Zanariah Ibrahim sebagai Plt. Kepala UDD Pembina PMI Provinsi Lampung.",
         "href": "https://mediapublika.com/dr-zam-zanariah-ditunjuk-jadi-plt-uud-pmi-provinsi-lampung/",
-        "linkLabel": "Baca berita",
+        "source": "Mediapublika",
+        "linkLabel": "Baca liputan",
         "external": true
       },
       {
         "date": "2025",
+        "datetime": "2025",
         "category": "Apresiasi",
         "title": "Pengundian Donor Darah Sukarela & Blood Donor Award 2025",
         "summary": "Apresiasi bagi pendonor darah sukarela PMI Provinsi Lampung.",
         "href": "https://www.youtube.com/watch?v=C05fBROVrlI",
-        "linkLabel": "Tonton di YouTube",
+        "source": "YouTube",
+        "linkLabel": "Tonton video",
         "external": true
       }
     ],
-    "footnote": "Ikuti kanal resmi UDD untuk kabar, edukasi, dan agenda donor terbaru.",
-    "referencesLabel": "KANAL RESMI UDD",
+    "footnote": "",
+    "referencesLabel": "Terhubung dengan UDD",
     "references": [
       {
         "label": "Instagram UDD",
@@ -430,6 +541,10 @@
       {
         "label": "TikTok UDD",
         "href": "https://www.tiktok.com/@udd.pmi.provinsi.lampung"
+      },
+      {
+        "label": "Aplikasi SaiDonor",
+        "href": "https://play.google.com/store/apps/details?id=id.pmilampung.saidonor&hl=id"
       }
     ]
   },
@@ -437,41 +552,69 @@
     "eyebrow": "07 / PERTANYAAN UMUM",
     "titleFirst": "Ada yang ingin",
     "titleSecond": "ditanyakan?",
-    "introduction": "Untuk persyaratan donor dan informasi layanan yang belum dikonfirmasi, tanyakan kepada petugas UDD.",
+    "introduction": "Pertanyaan umum tentang donor, permintaan darah, dan layanan UDD.",
     "contactLabel": "Hubungi UDD",
     "contactHref": "#kontak",
     "items": [
       {
         "question": "Di mana lokasi UDD Pembina PMI Provinsi Lampung?",
-        "answer": "Alamat UDD Pembina: Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung. Situs PMI Lampung mencantumkan UDD buka 24 jam; konfirmasikan layanan tertentu sebelum berkunjung."
+        "answer": "UDD Pembina berada di Jl. Sam Ratulangi No. 105, Penengahan, Bandar Lampung. Permintaan darah dilayani 24 jam setiap hari, sedangkan donor darah dilayani setiap hari pukul 07.30–21.00 WIB."
       },
       {
-        "question": "Kapan waktu donor darah?",
-        "answer": "Situs PMI Lampung mencantumkan gerai donor di Markas PMI setiap Jumat pukul 10.00 sampai 15.00 WIB dan UDD Pembina buka 24 jam. Jadwal dapat berubah; konfirmasikan sebelum datang."
+        "question": "Kapan saya bisa donor darah?",
+        "answer": "Permintaan darah di UDD Pembina dilayani 24 jam setiap hari. Donor darah dilayani setiap hari pukul 07.30–21.00 WIB."
       },
       {
-        "question": "Apa persyaratan donor darah?",
-        "answer": "Persyaratan donor terbaru perlu dikonfirmasi langsung kepada petugas UDD. Situs ini tidak mencantumkan batas usia, kondisi kesehatan, atau panduan medis yang belum disahkan."
+        "question": "Apa yang perlu disiapkan sebelum donor?",
+        "answer": "Istirahat cukup, makan sebelum donor, dan penuhi kebutuhan cairan. Bawa KTP atau SIM, atau paspor bagi warga negara asing, serta kartu donor jika ada. Isi kuesioner kesehatan dengan jujur dan ikuti arahan petugas."
       },
       {
-        "question": "Berapa jarak waktu antar-donor?",
-        "answer": "Jarak antar-donor bergantung pada ketentuan dan penilaian petugas. Mohon konfirmasikan sebelum donor; situs ini tidak menetapkan interval medis."
+        "question": "Apakah saya memenuhi syarat untuk donor?",
+        "answer": "Usia minimal pendonor adalah 17 tahun. Petugas menilai berat badan, pemeriksaan fisik, kadar hemoglobin, serta riwayat kesehatan sesuai kriteria seleksi. Memenuhi satu kriteria saja belum berarti layak donor; keputusan ditetapkan setelah seluruh penilaian."
       },
       {
-        "question": "Apakah donor darah aman untuk saya?",
-        "answer": "Kondisi kesehatan dan kelayakan donor perlu dinilai oleh petugas. Untuk pertanyaan medis pribadi, konsultasikan langsung dengan tenaga kesehatan; informasi di situs ini bukan nasihat medis."
+        "question": "Berapa lama proses permintaan darah?",
+        "answer": "Waktu penyelesaian bergantung pada kelengkapan permintaan dan sampel, ketersediaan komponen, serta hasil pemeriksaan pratransfusi. Pemeriksaan tambahan dapat diperlukan. Mintalah perkiraan waktu kepada petugas; situs ini tidak menjanjikan batas waktu penyelesaian."
       },
       {
-        "question": "Bagaimana prosedur permintaan darah untuk pasien?",
-        "answer": "Prosedur permintaan darah belum dikonfirmasi untuk ditampilkan di situs ini. Mintalah arahan fasilitas kesehatan yang merawat pasien."
-      },
-      {
-        "question": "Bagaimana informasi biaya pengolahan darah?",
-        "answer": "Rincian BPPD dan penjaminan belum dikonfirmasi untuk ditampilkan. Tanyakan informasi terbaru kepada rumah sakit dan UDD."
+        "question": "Apa itu BPPD?",
+        "answer": "BPPD adalah Biaya Penggantian Pengelolaan Darah, bukan harga jual darah. Biaya ini berkaitan dengan pengelolaan darah untuk pelayanan transfusi, bukan hanya pemeliharaan. Mintalah rincian tarif dan informasi penjaminan kepada UDD serta fasilitas kesehatan."
       },
       {
         "question": "Bagaimana mengetahui ketersediaan darah?",
-        "answer": "SaiDonor mencantumkan fitur informasi stok pada Google Play. Pastikan informasi dan ketersediaan terbaru melalui kanal resmi; situs ini tidak menampilkan stok langsung."
+        "answer": "Periksa aplikasi SaiDonor atau hubungi UDD. Ketersediaan per golongan darah dan komponen dapat berubah cepat, jadi konfirmasikan sebelum datang atau sebelum transfusi."
+      },
+      {
+        "question": "Bolehkah saya membatalkan donor?",
+        "answer": "Ya. Donor dilakukan secara sukarela. Anda dapat bertanya, membatalkan, atau mengundurkan diri dari proses penyumbangan darah. Sampaikan keputusan Anda kepada petugas. Persetujuan diberikan setelah Anda memahami penjelasan tentang donor."
+      },
+      {
+        "question": "Mengapa donor dapat ditunda atau ditolak?",
+        "answer": "Seleksi bertujuan melindungi pendonor dan penerima darah. Kondisi kesehatan, hasil pemeriksaan, riwayat tindakan medis, perjalanan, atau risiko infeksi dapat menjadi pertimbangan. Penundaan dapat bersifat sementara atau permanen sesuai kriteria. Tanyakan alasan dan tindak lanjut kepada petugas."
+      },
+      {
+        "question": "Apakah hasil uji saring reaktif berarti saya pasti sakit?",
+        "answer": "Hasil uji saring reaktif berulang bukan diagnosis penyakit. Hasil tersebut berarti darah tidak dapat digunakan untuk transfusi. Ikuti konseling dan rujukan pemeriksaan diagnostik yang diberikan petugas; diagnosis memerlukan pemeriksaan lanjutan di fasilitas kesehatan."
+      },
+      {
+        "question": "Apakah riwayat kesehatan saya dirahasiakan?",
+        "answer": "Permenkes No. 91 Tahun 2015 mengatur penilaian pendonor secara rahasia serta konseling dalam ruang yang menjaga kerahasiaan. Sampaikan informasi kesehatan melalui petugas yang berwenang dan tanyakan prosedur penyampaian hasil pemeriksaan."
+      },
+      {
+        "question": "Apakah golongan darah yang sama sudah cukup untuk transfusi?",
+        "answer": "Golongan darah yang sama belum menggantikan persyaratan pemeriksaan pratransfusi. Petugas melakukan pemeriksaan sesuai jenis komponen dan ketentuan, termasuk uji silang serasi untuk darah yang mengandung sel darah merah. Keputusan transfusi berada pada dokter yang merawat."
+      },
+      {
+        "question": "Bagaimana jika ada keluhan setelah donor?",
+        "answer": "Sampaikan keluhan kepada petugas dan ikuti instruksi setelah donor. Jika muncul informasi kesehatan baru yang dapat memengaruhi keamanan darah, segera beri tahu UDD. Untuk kondisi yang memerlukan pertolongan segera, hubungi fasilitas kesehatan."
+      },
+      {
+        "question": "Apa yang perlu dilakukan untuk kebutuhan darah darurat?",
+        "answer": "Segera koordinasikan dengan dokter atau fasilitas kesehatan yang merawat pasien. Tim medis mengatur kebutuhan transfusi dan berkoordinasi dengan UDD sesuai prosedur. WhatsApp Humas merupakan kanal informasi; jangan mengandalkan balasan pesan untuk pertolongan darurat."
+      },
+      {
+        "question": "Ke mana saya menghubungi UDD?",
+        "answer": "Telepon UDD Pembina di (0721) 702147 atau (0721) 703020, WhatsApp Humas di 0811 790 3020, atau Call Center PMI Provinsi Lampung di 0811 7979 972."
       }
     ]
   },
@@ -480,10 +623,19 @@
     "titleFirst": "Butuh informasi?",
     "titleSecond": "Hubungi UDD.",
     "introduction": "Alamat UDD, WhatsApp Humas, dan Call Center PMI Provinsi Lampung.",
+    "locationImage": "/media/3c4d5e6f708192a3b4c5d6e7.png",
+    "locationImageAlt": "Ilustrasi area layanan UDD",
+    "locationImageNote": "Ilustrasi suasana area layanan; gunakan peta untuk petunjuk lokasi yang akurat.",
     "items": [
       {
-        "label": "TELEPON LANGSUNG UDD",
-        "value": "Perlu konfirmasi UDD PMI Provinsi Lampung"
+        "label": "TELEPON UDD PEMBINA",
+        "value": "(0721) 702147",
+        "href": "tel:+62721702147"
+      },
+      {
+        "label": "TELEPON UDD · SALURAN KEDUA",
+        "value": "(0721) 703020",
+        "href": "tel:+62721703020"
       },
       {
         "label": "WHATSAPP HUMAS UDD",
@@ -496,7 +648,7 @@
       },
       {
         "label": "JAM UDD PEMBINA",
-        "value": "24 jam (tercantum di situs PMI Lampung)"
+        "value": "Permintaan darah 24 jam · donor 07.30–21.00 WIB"
       },
       {
         "label": "CALL CENTER PMI PROVINSI LAMPUNG",
@@ -504,10 +656,10 @@
         "href": "tel:+628117979972"
       }
     ],
-    "footnote": "Call Center PMI Provinsi Lampung adalah kanal tingkat provinsi, bukan kontak khusus UDD. WhatsApp Humas tercantum pada profil dan Linktree UDD; peruntukan untuk permintaan darah perlu konfirmasi.",
+    "footnote": "Nomor telepon UDD bersumber dari direktori kontak PMI (ayodonor.pmi.or.id). WhatsApp Humas tercantum pada profil resmi UDD. Untuk kebutuhan mendesak, hubungi fasilitas kesehatan yang merawat pasien.",
     "social": {
       "eyebrow": "KANAL DIGITAL",
-      "title": "Kanal & lokasi",
+      "title": "Kanal dan lokasi",
       "description": "Ikuti kanal resmi UDD Pembina PMI Provinsi Lampung dan akun PMI Provinsi Lampung.",
       "channels": [
         {
@@ -656,22 +808,38 @@
           "href": "https://www.youtube.com/watch?v=uNO_KaxYxj4"
         }
       ],
-      "profileSummary": "",
-      "checkedAt": ""
+      "profileSummary": "Profil Instagram UDD memuat sorotan Edukasi, Syarat Donor, Mitos dan Fakta, serta Aplikasi Donorku.",
+      "checkedAt": "Diperiksa 23 Oktober 2026."
     }
   },
   "footer": {
-    "descriptionFirst": "Informasi UDD Pembina PMI Provinsi Lampung.",
-    "descriptionSecond": "Alamat, kanal Humas, dan informasi layanan yang terverifikasi.",
-    "backToTop": "Kembali ke atas",
+    "descriptionFirst": "UDD Pembina PMI Provinsi Lampung",
+    "descriptionSecond": "Panduan donor, informasi layanan, dan kontak resmi UDD.",
+    "backToTop": "Kembali ke beranda",
     "copyrightPrefix": "© ",
     "copyrightSuffix": " · UDD Pembina PMI Provinsi Lampung",
-    "note": "Informasi kesehatan di situs ini bersifat umum. Kelayakan donor ditentukan oleh petugas UDD."
+    "note": "Informasi edukatif. Kelayakan donor ditetapkan petugas UDD."
   },
   "ui": {
     "skipLink": "Lewati ke konten utama",
     "menuOpen": "Buka menu navigasi",
     "menuClose": "Tutup menu navigasi",
-    "sectionNavigation": "Navigasi utama"
+    "sectionNavigation": "Navigasi utama",
+    "profileLogoAlt": "Lambang Palang Merah Indonesia",
+    "screenshotsEyebrow": "TAMPILAN APLIKASI",
+    "screenshotsCount": "layar",
+    "screenshotsHint": "Geser untuk melihat semua tampilan",
+    "screenshotsRegionLabel": "Cuplikan layar aplikasi SaiDonor",
+    "privacyDataSafetyHeading": "Pengungkapan Keamanan Data di Google Play",
+    "privacyDataCollectedHeading": "Data yang dicantumkan",
+    "privacyPurposesHeading": "Tujuan penggunaan data",
+    "privacyProtectionHeading": "Perlindungan data",
+    "relatedAccountLabel": "Akun terkait",
+    "socialChannelsCount": "TAUTAN",
+    "socialContentCount": "pilihan",
+    "sourceLinksLabel": "TAUTAN SAIDONOR",
+    "footerNavLabel": "Jelajahi situs",
+    "footerServicesLabel": "Layanan",
+    "footerInfoLabel": "Informasi"
   }
 }

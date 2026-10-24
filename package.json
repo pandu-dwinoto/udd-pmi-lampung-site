@@ -5,7 +5,10 @@
   "description": "Situs informasi dan CMS lokal UDD PMI Provinsi Lampung",
   "scripts": {
     "start": "node server.js",
-    "setup-admin": "node setup-admin.js"
+    "test": "node scripts/check.js",
+    "bump": "node scripts/bump-version.js",
+    "setup-admin": "node setup-admin.js",
+    "change-password": "node scripts/change-admin-password.js"
   },
   "engines": {
     "node": ">=18"

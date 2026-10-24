@@ -114,6 +114,45 @@ const fieldNames = {
   date: "Tanggal",
   category: "Kategori",
   summary: "Ringkasan",
+  requirementsTitle: "Judul persiapan donor",
+  requirements: "Daftar persiapan donor",
+  deferralsTitle: "Judul catatan kelayakan",
+  deferrals: "Catatan kelayakan donor",
+  deferralsNote: "Catatan tambahan kelayakan",
+  stepsTitle: "Judul alur",
+  steps: "Langkah-langkah",
+  tips: "Tips setelah donor",
+  scheduleTitle: "Judul jadwal layanan",
+  schedule: "Jadwal layanan",
+  urgentTitle: "Judul kebutuhan mendesak",
+  urgentDescription: "Deskripsi kebutuhan mendesak",
+  urgentActions: "Aksi kebutuhan mendesak",
+  componentsTitle: "Judul komponen darah",
+  components: "Komponen darah",
+  componentsNote: "Catatan komponen darah",
+  bppdTitle: "Judul BPPD",
+  bppdDescription: "Deskripsi BPPD",
+  bppdPoints: "Poin BPPD",
+  datetime: "Tanggal mesin (format ISO, opsional)",
+  screenshotsTitle: "Judul galeri tangkapan layar",
+  screenshotsNote: "Catatan tangkapan layar",
+  screenshots: "Tangkapan layar aplikasi",
+  profileLogoAlt: "Teks alternatif logo",
+  screenshotsEyebrow: "Label galeri tangkapan layar",
+  screenshotsCount: "Satuan jumlah layar",
+  screenshotsHint: "Petunjuk geser galeri",
+  screenshotsRegionLabel: "Label wilayah galeri",
+  privacyDataSafetyHeading: "Judul keamanan data",
+  privacyDataCollectedHeading: "Judul data yang dicantumkan",
+  privacyPurposesHeading: "Judul tujuan penggunaan data",
+  privacyProtectionHeading: "Judul perlindungan data",
+  relatedAccountLabel: "Label akun terkait",
+  socialChannelsCount: "Satuan jumlah kanal",
+  socialContentCount: "Satuan jumlah konten",
+  sourceLinksLabel: "Label tautan sumber",
+  footerNavLabel: "Label navigasi footer",
+  footerServicesLabel: "Judul grup layanan footer",
+  footerInfoLabel: "Judul grup informasi footer",
   contactHref: "Tautan kontak",
   contactLabel: "Label kontak",
   social: "Kanal sosial & Humas UDD",
@@ -150,10 +189,11 @@ const templateForArray = (path, current) => {
     "donor.requirements": { label: "", value: "" },
     "donor.steps": { title: "", description: "" },
     "donor.schedule": { place: "", detail: "" },
+    "donor.tips": { title: "", items: [] },
     "donor.actions": { label: "", href: "#", suffix: "→" },
     "bloodRequest.steps": { title: "", description: "" },
     "bloodRequest.urgentActions": { label: "", href: "#" },
-    "updates.entries": { date: "", category: "Kegiatan", title: "", summary: "", href: "", linkLabel: "", external: false },
+    "updates.entries": { date: "", datetime: "", category: "Kegiatan", title: "", summary: "", href: "", linkLabel: "", external: false },
     "updates.references": { label: "", href: "" },
     "faq.items": { question: "", answer: "" },
     "contact.items": { label: "", value: "", href: "" }
@@ -238,8 +278,10 @@ function initCMS() {
   const previewFrame = document.querySelector("#preview-frame");
   let content;
   let csrfToken;
+  let version;
   let activeSection;
   let previewReady = false;
+  let dirty = false;
 
   const showStatus = (text, isError = false) => {
     status.textContent = text;
@@ -317,10 +359,13 @@ function initCMS() {
   function renderSections() {
     const sections = Object.keys(content);
     nav.innerHTML = sections.map((section) => `<button class="section-nav-item" type="button" data-section="${escapeHTML(section)}">${escapeHTML(sectionNames[section] || section)}</button>`).join("");
-    nav.addEventListener("click", (event) => {
-      const button = event.target.closest("button[data-section]");
-      if (button) renderSection(button.dataset.section);
-    });
+    if (nav.dataset.bound !== "true") {
+      nav.dataset.bound = "true";
+      nav.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-section]");
+        if (button) renderSection(button.dataset.section);
+      });
+    }
     renderSection(sections[0]);
   }
 
@@ -329,6 +374,7 @@ function initCMS() {
     if (!target.matches(".editor-input")) return;
     const path = JSON.parse(target.dataset.path);
     setPath(path, target.type === "checkbox" ? target.checked : target.value);
+    dirty = true;
     showStatus("Ada perubahan draf yang belum dipublikasikan.");
   });
 
@@ -352,6 +398,7 @@ function initCMS() {
         array.splice(destination, 0, item);
       }
     }
+    dirty = true;
     renderSection(activeSection);
     showStatus("Draf diperbarui. Simpan untuk memublikasikan.");
   });
@@ -384,15 +431,31 @@ function initCMS() {
         headers: { "Content-Type": "application/json", "X-CSRF-Token": csrfToken },
         body: JSON.stringify({ name: file.name, mimeType: file.type, data: String(dataUrl).split(",")[1] })
       });
+      if (response.status === 401) {
+        window.location.assign("/admin/login");
+        return;
+      }
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || "Gambar tidak dapat disimpan.");
       setPath(JSON.parse(input.dataset.path), result.path);
+      dirty = true;
       renderSection(activeSection);
       showStatus("Gambar tersimpan lokal. Simpan perubahan untuk memublikasikannya.");
     } catch (error) {
       showStatus(error.message, true);
     }
   });
+
+  async function loadContent() {
+    const response = await fetch("/api/admin/content", { credentials: "same-origin", headers: { Accept: "application/json" } });
+    if (response.status === 401) {
+      window.location.assign("/admin/login");
+      return null;
+    }
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "Konten CMS gagal dimuat.");
+    return result;
+  }
 
   saveButton.addEventListener("click", async () => {
     saveButton.disabled = true;
@@ -402,17 +465,41 @@ function initCMS() {
         method: "POST",
         credentials: "same-origin",
         headers: { "Content-Type": "application/json", "X-CSRF-Token": csrfToken },
-        body: JSON.stringify({ content })
+        body: JSON.stringify({ content, version })
       });
+      if (response.status === 401) {
+        window.location.assign("/admin/login");
+        return;
+      }
       const result = await response.json();
+      if (response.status === 409) {
+        showStatus(result.error || "Konten sudah diperbarui di tab lain. Muat ulang lalu ulangi perubahan.", true);
+        const fresh = await loadContent();
+        if (fresh) {
+          content = fresh.content;
+          csrfToken = fresh.csrfToken;
+          version = fresh.version;
+          dirty = false;
+          renderSections();
+        }
+        return;
+      }
       if (!response.ok) throw new Error(result.error || "Konten tidak dapat disimpan.");
       content = result.content || content;
-      showStatus("Berhasil disimpan dan dipublikasikan. Salinan sebelumnya dicadangkan di content.json.bak.");
+      version = result.version || version;
+      dirty = false;
+      showStatus("Berhasil disimpan dan dipublikasikan. Cadangan tersimpan di folder backups/.");
     } catch (error) {
       showStatus(error.message, true);
     } finally {
       saveButton.disabled = false;
     }
+  });
+
+  window.addEventListener("beforeunload", (event) => {
+    if (!dirty) return;
+    event.preventDefault();
+    event.returnValue = "";
   });
 
   previewButton.addEventListener("click", () => {
@@ -439,20 +526,13 @@ function initCMS() {
     window.location.assign("/admin/login");
   });
 
-  fetch("/api/admin/content", { credentials: "same-origin", headers: { Accept: "application/json" } })
-    .then(async (response) => {
-      if (response.status === 401) {
-        window.location.assign("/admin/login");
-        return null;
-      }
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Konten CMS gagal dimuat.");
-      return result;
-    })
+  loadContent()
     .then((result) => {
       if (!result) return;
       content = result.content;
       csrfToken = result.csrfToken;
+      version = result.version;
+      dirty = false;
       renderSections();
       showStatus("Konten termuat dari penyimpanan lokal.");
     })
