@@ -13,7 +13,7 @@
     "heroImage": "/media/6a7b8c9d0e1f223344556677.png",
     "heroImageAlt": "Pendonor darah didampingi petugas UDD berhijab dengan seragam berlambang PMI di ruang donor",
     "leadershipImage": "/media/7feec85c323f6d29f4b89b56.jpg",
-    "leadershipImageAlt": "dr. Zam Zanariah Ibrahim, Plt. Kepala UDD Pembina"
+    "leadershipImageAlt": "dr. Zam Zanariah Ibrahim, Sp.S., M.Kes., Plt. Kepala UDD Pembina"
   },
   "brand": {
     "shortName": "UDD Pembina PMI",
@@ -56,7 +56,7 @@
     "eyebrow": "UNIT DONOR DARAH PMI",
     "titleFirst": "Setetes darah,",
     "titleSecond": "sejuta harapan.",
-    "description": "Dapatkan informasi donor darah, lokasi UDD, dan layanan resmi UDD Pembina PMI Provinsi Lampung.",
+    "description": "Informasi resmi donor darah, permintaan darah, dan layanan UDD Pembina PMI Provinsi Lampung.",
     "primaryAction": {
       "label": "Saya ingin donor",
       "href": "#panduan",
@@ -144,7 +144,7 @@
     "leadershipTitle": "Pimpinan",
     "leadership": [
       { "role": "Ketua Pengurus PMI Provinsi Lampung", "name": "Purnama Wulan Sari Mirza (2025–2030)" },
-      { "role": "Plt. Kepala UDD Pembina", "name": "dr. Zam Zanariah Ibrahim, Sp.S." }
+      { "role": "Plt. Kepala UDD Pembina", "name": "dr. Zam Zanariah Ibrahim, Sp.S., M.Kes." }
     ],
     "legalTitle": "Dasar penyelenggaraan",
     "legalBasis": [
@@ -511,7 +511,7 @@
         "datetime": "2026-03",
         "category": "Kelembagaan",
         "title": "dr. Zam Zanariah ditunjuk sebagai Plt. Kepala UDD",
-        "summary": "PMI Provinsi Lampung menunjuk dr. Zam Zanariah Ibrahim sebagai Plt. Kepala UDD Pembina PMI Provinsi Lampung.",
+        "summary": "PMI Provinsi Lampung menunjuk dr. Zam Zanariah Ibrahim, Sp.S., M.Kes. sebagai Plt. Kepala UDD Pembina PMI Provinsi Lampung.",
         "href": "https://mediapublika.com/dr-zam-zanariah-ditunjuk-jadi-plt-uud-pmi-provinsi-lampung/",
         "source": "Mediapublika",
         "linkLabel": "Baca liputan",

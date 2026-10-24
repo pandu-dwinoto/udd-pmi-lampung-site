@@ -3202,7 +3202,21 @@ body.pmi-modern .services-section { background-image:linear-gradient(100deg,#f7f
 .finder-suggestions a { padding:9px 12px; background:#fff4f6; border:1px solid #f3dce2; color:#a51031; border-radius:8px; font-size:12px; font-weight:600; text-decoration:none; }
 .finder-suggestions a:hover { background:#ffe5eb; }
 .pmi-modern .quick-access-heading h2 { font-family:var(--sans); font-size:26px; letter-spacing:-.035em; }
+.pmi-modern .service-finder { grid-template-columns:minmax(0,1.22fr) minmax(260px,.78fr); gap:42px; padding:38px 42px; margin-bottom:42px; border:1px solid #ece2e3; border-radius:20px; background:linear-gradient(120deg,#fffafa,#fff 62%,#fff4f5); }
+.pmi-modern .finder-copy h2 { max-width:680px; margin:0 0 13px; color:#292b31; font-size:clamp(29px,3.2vw,42px); line-height:1.12; }
+.pmi-modern .finder-copy h2 span { color:#b31337; }
+.pmi-modern .finder-copy>p { max-width:52ch; margin:0; color:#646872; font-size:15px; line-height:1.75; }
+.pmi-modern .finder-actions { display:flex; flex-wrap:wrap; align-items:center; gap:18px 22px; margin-top:24px; }
+.pmi-modern .finder-actions .button { min-height:48px; border-radius:11px; background:#d7193f; color:#fff; box-shadow:0 9px 20px #d7193f22; }
+.pmi-modern .finder-actions .button:hover { background:#b91233; }
+.pmi-modern .finder-actions .text-link { color:#8d1230; }
+.pmi-modern .finder-app-card { display:flex; flex-direction:column; justify-content:space-between; gap:30px; min-height:218px; padding:28px; border-radius:16px; color:#fff; background:linear-gradient(145deg,#80112d,#b5153a); box-shadow:0 18px 32px #9b15301f; }
+.pmi-modern .finder-app-icon { width:48px; height:48px; display:grid; place-items:center; border:1px solid #ffffff4a; border-radius:14px; background:#ffffff18; }
+.pmi-modern .finder-app-icon svg { width:26px; height:26px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.7; }
+.pmi-modern .finder-app-card p { margin:0 0 10px; color:#ffd9df; font-size:10px; font-weight:800; letter-spacing:.12em; }
+.pmi-modern .finder-app-card h3 { max-width:29ch; margin:0; color:#fff; font:600 19px/1.45 var(--sans); letter-spacing:-.02em; }
 @media(max-width:760px) { .service-finder { grid-template-columns:1fr; gap:24px; padding-top:12px; padding-bottom:32px; } }
+@media(max-width:760px) { .pmi-modern .service-finder { grid-template-columns:1fr; gap:24px; padding:28px 22px; border-radius:16px; } .pmi-modern .finder-copy h2 { font-size:30px; } .pmi-modern .finder-app-card { min-height:0; padding:24px; } }
 .pmi-modern { --ink:#25272c; --muted:#62666f; --red:#d7193f; --red-dark:#aa1030; --paper:#fff; --line:#e8e9ed; background:#fff; }
 .pmi-modern .site-header { background:#ffffffed; border-top:4px solid #d7193f; border-bottom:1px solid #ededf0; }
 .pmi-modern .brand-copy strong { letter-spacing:-.025em; font-size:17px; }
@@ -3398,11 +3412,15 @@ body.pmi-modern .services-section { background-image:linear-gradient(100deg,#f7f
 .pmi-modern .site-footer a,.pmi-modern .site-footer p,.pmi-modern .footer-bottom { color:#e2e3e7; }
 .pmi-modern .mobile-action--accent { background:#d7193f; border-color:#d7193f; }
 @media(prefers-reduced-motion:no-preference) {
+  .pmi-modern .hero.section-wrap { isolation:isolate; overflow:hidden; }
+  .pmi-modern .hero.section-wrap::before { content:""; position:absolute; z-index:0; width:52rem; height:52rem; top:-30rem; left:-16rem; border-radius:50%; background:radial-gradient(circle,rgba(255,207,211,.18) 0%,rgba(255,207,211,.075) 35%,transparent 70%); filter:blur(8px); pointer-events:none; animation:hero-ambient-light 18s ease-in-out infinite alternate; }
+  .pmi-modern .hero-copy,.pmi-modern .hero-art { position:relative; z-index:1; }
   .pmi-modern .hero-copy { animation:pmi-enter 750ms ease both; }
   .pmi-modern .hero-art { animation:pmi-enter 950ms ease both; }
   .pmi-modern .gallery-card img { transition:transform 650ms ease; }
   .pmi-modern .gallery-card:hover img { transform:scale(1.04); }
   @keyframes pmi-enter { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes hero-ambient-light { from { transform:translate3d(-3%, -2%, 0) scale(.94); opacity:.48; } to { transform:translate3d(17%, 13%, 0) scale(1.12); opacity:.9; } }
 }
 @media(max-width:1000px) {
   .pmi-modern .hero.section-wrap { padding:48px 36px 65px; gap:30px; }

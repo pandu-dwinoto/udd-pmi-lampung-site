@@ -533,7 +533,7 @@ function renderFooter(content) {
         </div>
         <div class="footer-nav-group">
           <span>${escapeHTML(ui.footerInfoLabel || "Informasi")}</span>
-          <a href="#profil">Profil UDD</a>
+          <a href="halaman.html?page=tentang-udd">Tentang UDD</a>
           <a href="#informasi">Kabar &amp; kegiatan</a>
           <a href="#faq">Pertanyaan umum</a>
           <a href="#kontak">Lokasi &amp; kontak</a>
@@ -706,47 +706,28 @@ function refineExperience() {
   document.querySelector('.service-finder')?.remove();
   const finder = document.createElement('section');
   finder.className = 'service-finder';
-  finder.setAttribute('aria-labelledby', 'finder-title');
-  finder.innerHTML = `<div class="finder-copy"><p class="eyebrow">PUSAT INFORMASI UDD</p><h2 id="finder-title">Temukan informasi<br>layanan darah.</h2><p>Cari panduan donor, informasi permintaan darah, serta lokasi dan kontak UDD Pembina PMI Provinsi Lampung.</p></div><div class="finder-search"><label for="service-search">Cari informasi layanan</label><div class="finder-field"><input id="service-search" type="search" placeholder="Contoh: syarat donor, BPPD, lokasi" autocomplete="off" aria-controls="finder-results"><span aria-hidden="true">⌕</span></div><p class="finder-status" role="status" aria-live="polite"></p><ul id="finder-results"></ul><div class="finder-suggestions"><a href="#donor">Panduan donor darah ↗</a><a href="#permintaan-darah">Permintaan darah pasien ↗</a><a href="#kontak">Lokasi dan kontak UDD ↗</a></div></div>`;
-  const searchItems = [
-    {title:'Persiapan dan kelayakan donor',text:'syarat usia berat badan hemoglobin obat kesehatan pertama kali',href:'#donor'},
-    {title:'Permintaan darah dan BPPD',text:'pasien biaya harga transfusi crossmatch stok komponen rumah sakit',href:'#permintaan-darah'},
-    {title:'Lokasi, waktu layanan, dan kontak',text:'alamat jam buka jadwal telepon whatsapp hubungi',href:'#kontak'},
-    {title:'Aplikasi SaiDonor',text:'aplikasi stok kartu donor android unduh',href:'#saidonor'},
-    ...activeSiteContent.faq.items.map((item,index) => ({title:item.question,text:item.answer,href:`#faq-answer-${index}`}))
-  ];
-  finder.querySelector('input').addEventListener('input', event => {
-    const query = event.target.value.trim().toLocaleLowerCase('id');
-    const matches = query ? searchItems.filter(item => query.split(/\s+/).every(term => `${item.title} ${item.text}`.toLocaleLowerCase('id').includes(term))).slice(0,5) : [];
-    finder.querySelector('.finder-status').textContent = query ? (matches.length ? `${matches.length} informasi ditemukan` : 'Belum ditemukan. Coba kata lain atau hubungi UDD.') : '';
-    finder.querySelector('ul').innerHTML = matches.map(item => `<li><a href="${escapeHTML(item.href)}">${escapeHTML(item.title)}<span aria-hidden="true">→</span></a></li>`).join('');
-  });
+  finder.setAttribute('aria-labelledby', 'saidonor-promo-title');
+  const app = activeSiteContent.app || {};
+  finder.innerHTML = `<div class="finder-copy"><p class="eyebrow">APLIKASI SAIDONOR</p><h2 id="saidonor-promo-title">Semua kebutuhan pendonor,<br><span>dalam satu aplikasi.</span></h2><p>SaiDonor membantu pendonor mengakses informasi dan layanan digital dalam satu tempat.</p><div class="finder-actions"><a class="button button-primary" href="${escapeHTML(safeHref(app.playStoreUrl || '#saidonor'))}" target="_blank" rel="noopener noreferrer">Unduh SaiDonor <span aria-hidden="true">↗</span></a><a class="text-link" href="#saidonor">Lihat fitur aplikasi <span aria-hidden="true">→</span></a></div></div><div class="finder-app-card"><span class="finder-app-icon" aria-hidden="true">${siteIcon('app')}</span><div><p>UNTUK PENDONOR</p><h3>Kartu donor digital, agenda Mobile Unit, informasi stok, dan pengingat donor.</h3></div></div>`;
   document.querySelectorAll('.faq-list details').forEach((item,index) => { item.id=`faq-answer-${index}`; });
   if (/^#faq-answer-\d+$/.test(window.location.hash)) {
     const linkedAnswer = document.getElementById(window.location.hash.slice(1));
     if (linkedAnswer) linkedAnswer.open = true;
   }
-  finder.addEventListener('click', event => {
-    const link = event.target.closest('a[href^="#faq-answer-"]');
-    if (!link) return;
-    const answer = document.getElementById(link.hash.slice(1));
-    if (answer) { answer.open = true; answer.querySelector('summary').focus({preventScroll:true}); }
-  });
   document.querySelectorAll('.editorial-details').forEach(wrapper => {
     Array.from(wrapper.children).filter(node => node.tagName !== 'SUMMARY').forEach(node => wrapper.before(node));
     wrapper.remove();
   });
   const main = document.querySelector('main');
-  ['beranda', 'donor', 'permintaan-darah', 'informasi', 'dokumentasi', 'saidonor', 'profil', 'faq', 'kontak'].forEach((id) => {
+  ['beranda', 'donor', 'permintaan-darah', 'informasi', 'dokumentasi', 'saidonor', 'faq', 'kontak'].forEach((id) => {
     const section = document.getElementById(id);
     if (section) main.append(section);
   });
   const hero = document.getElementById('beranda');
-  const profileSection = document.getElementById('profil');
   const quickAccess = document.querySelector('.quick-access');
   const noticeBand = document.querySelector('.notice-band');
-  hero.after(profileSection);
-  profileSection.after(quickAccess);
+  document.getElementById('profil')?.remove();
+  hero.after(quickAccess);
   quickAccess.prepend(finder);
   quickAccess.after(noticeBand);
   noticeBand.after(document.getElementById('layanan'));
@@ -763,7 +744,6 @@ function refineExperience() {
   };
   fold('.app-detail-grid', 'Versi dan dukungan aplikasi');
   fold('.social-directory', 'Jelajahi seluruh kanal resmi UDD');
-  fold('.profile-detail-grid', 'Lingkup layanan, pimpinan, dan dasar penyelenggaraan');
   document.querySelectorAll('.eyebrow').forEach(node => {
     node.textContent = node.textContent.replace(/^\d{2}\s*\/\s*/, '');
   });
@@ -800,7 +780,6 @@ function renderSite(content) {
   renderHero(content);
   renderQuickAccess(content);
   renderNotice(content);
-  renderProfile(content);
   renderGallery(content);
   renderServices(content);
   renderDonor(content);
@@ -821,7 +800,7 @@ function renderSite(content) {
 }
 
 const localServer = ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname);
-const contentUrl = localServer ? "/api/content" : new URL("content.json?v=20261024-1152", SITE_ROOT).href;
+const contentUrl = localServer ? "/api/content" : new URL("content.json?v=20261024-1233", SITE_ROOT).href;
 
 fetch(contentUrl, { headers: { Accept: "application/json" } })
   .then((response) => {
