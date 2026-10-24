@@ -2809,8 +2809,8 @@ body { background: var(--paper); color: var(--ink); }
 }
 .pmi-modern .request-flow-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 142px;
-  gap: 16px;
+  grid-template-columns: 142px minmax(0, 1fr);
+  gap: 18px;
   align-items: center;
   min-height: 92px;
   padding: 17px 19px;
@@ -2841,6 +2841,7 @@ body { background: var(--paper); color: var(--ink); }
   line-height: 1.65;
 }
 .pmi-modern .request-flow-image {
+  order: -1;
   width: 142px;
   height: 104px;
   border-radius: 11px;
@@ -2942,7 +2943,7 @@ body { background: var(--paper); color: var(--ink); }
   .pmi-modern .request-flow-number { width: 46px; height: 46px; font-size: 10px; }
   .pmi-modern .request-flow-list li:not(:last-child)::after { top: 43px; left: 22px; }
   .pmi-modern .request-flow-card { min-height: 0; padding: 15px; }
-  .pmi-modern .request-flow-card { grid-template-columns: minmax(0, 1fr) 96px; gap: 12px; }
+  .pmi-modern .request-flow-card { grid-template-columns: 96px minmax(0, 1fr); gap: 13px; }
   .pmi-modern .request-flow-image { width: 96px; height: 100px; border-radius: 10px; }
   .pmi-modern .profile-showcase { height: 190px; border-radius: 16px; }
   .pmi-modern .profile-showcase figcaption { top: 18px; left: 18px; }

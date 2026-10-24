@@ -812,7 +812,7 @@ function renderSite(content) {
 }
 
 const localServer = ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname);
-const contentUrl = localServer ? "/api/content" : new URL("content.json?v=20261024-1107", SITE_ROOT).href;
+const contentUrl = localServer ? "/api/content" : new URL("content.json?v=20261024-1123", SITE_ROOT).href;
 
 fetch(contentUrl, { headers: { Accept: "application/json" } })
   .then((response) => {
